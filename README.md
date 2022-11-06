@@ -1,1 +1,1 @@
-# interactive-diagram
+# interactdiagrams
