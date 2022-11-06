@@ -330,7 +330,7 @@
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.16,-1087.5 1671.16,-1084 1661.16,-1080.5 1661.16,-1087.5"/>
 </g>
 <!-- 2af0ac9e84d94520b56750c82af0ff82 -->
-<g id="skyline-ec2&#45;Amplify" class="node">
+<g id="ec2&#45;Amplify" class="node">
 <title>2af0ac9e84d94520b56750c82af0ff82</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-1375"/>
 <text text-anchor="middle" x="643" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Amplify</text>
