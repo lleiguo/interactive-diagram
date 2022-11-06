@@ -36,43 +36,41 @@ d3.xml(svgURL).then((data) => {
   const ec2Migration = (i) => {
     d3.select(ec2[i])
       .transition()
-      .duration(1000)
+      .duration(5000)
       .attrTween("transform", function () {
-        const currentPos = getElementBBox(ec2[i]);
-        const x = servicePodsPos.x - currentPos.x + currentPos.w * (i + 1);
-        const y = servicePodsPos.y - currentPos.y;
+        const ec2Pos = getElementBBox(ec2[i]);
+        const x = servicePodsPos.x - ec2Pos.x + ec2Pos.w * (i + 1);
+        const y = servicePodsPos.y - ec2Pos.y;
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
-      .on("end", function () {
+      .on("end", () => {
+        d3.select("[id=clust8]").node().appendChild(ec2[i]);
         d3.select(ec2[i])
           .select("image")
           .attr(
             "xlink:href",
             "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png"
           );
-
-        d3.select("[id=clust8]").node().appendChild(ec2[i]);
-
-        const path = d3.path();
-        path.moveTo(workerNodePos.x, workerNodePos.y);
-        path.lineTo(
-          workerNodePos.x + workerNodePos.w * (i + 1),
-          workerNodePos.y
-        );
-        path.lineTo(
-          workerNodePos.x + workerNodePos.w * (i + 1),
-          workerNodePos.y + workerNodePos.h
-        );
-        path.lineTo(workerNodePos.x, workerNodePos.y + workerNodePos.h);
-        path.closePath();
-        console.log(path);
-
-        workerNode.attr("d", path);
-
+      })
+      .on("start", function () {
         if (i < ec2.length - 1) {
           ec2Migration(i + 1);
         }
       });
+  };
+
+  const expandk8sCluster = (i) => {
+    const path = d3.path();
+    path.moveTo(workerNodePos.x, workerNodePos.y);
+    path.lineTo(workerNodePos.x + workerNodePos.w * (i - 1), workerNodePos.y);
+    path.lineTo(
+      workerNodePos.x + workerNodePos.w * (i - 1),
+      workerNodePos.y + workerNodePos.h
+    );
+    path.lineTo(workerNodePos.x, workerNodePos.y + workerNodePos.h);
+    path.closePath();
+
+    workerNode.attr("d", path);
   };
 
   const removeSkyline = () => {
@@ -93,6 +91,7 @@ d3.xml(svgURL).then((data) => {
   };
 
   d3.select("[id=clust4]").on("click", function () {
+    expandk8sCluster(ec2.length);
     ec2Migration(0);
   });
 
