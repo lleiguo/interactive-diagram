@@ -70,11 +70,15 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
         s3 = S3("S3")
 
     with Cluster("Event Bus (Kafka)"):
-
-        vpcLocal = Kafka(id="VPC Local", label="VPC Local")
-        vpcAgg = Kafka(id="VPC Aggregate", label="VPC Aggregate")
-        limboLocal = Kafka(id="Limbo Local", label="Limbo Local"),
-        limboAgg = Kafka(id="Limbo Aggregate", label="Limbo Aggregate")
+        with Cluster("VPC Local"):
+            vpcLocal = Kafka(id="VPC Local", label="VPC Local")
+        with Cluster("VPC Aggregate"):
+            vpcAgg = Kafka(id="VPC Aggregate", label="VPC Aggregate")
+        with Cluster("Limbo Local"):
+            limboLocal = Kafka(id="Limbo Local", label="Limbo Local")
+        with Cluster("Limbo Aggregate"):
+            limboAgg = Kafka(id="Limbo Aggregate", label="Limbo Aggregate")
+            
         kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
         vpcLocal >> limboAgg
         limboLocal >> vpcAgg
