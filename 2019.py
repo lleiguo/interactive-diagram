@@ -18,21 +18,27 @@ graph_attr = {
 
 with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
-    with Cluster(label="Edge", direction="TB"):
+    with Cluster(label="Edge", direction="TB", graph_attr={"id": "cluster_edge"}):
         dns = Route53("dns")
 
-        with Cluster("Auth Facade"):
+        with Cluster("Auth Facade", graph_attr={"id": "cluster_auth_facade"}):
             authFacade = AutoScaling("Auth Facade")
             authFacadeALB = ALB("Auth Facade ALB")
 
-        with Cluster("Aperture"):
+        with Cluster("Aperture", graph_attr={"id": "cluster_aperture"}):
             apertureNLB = NLB("Aperture NLB", id="apertureNLB")
             traefik = AutoScaling("Aperture Traefik",  id="traefik")
 
-    ec2attributes = {
-        "id": "ec2"
-    }
-    with Cluster("EC2 Services"):
+    with Cluster("Kubernetes Cluster", graph_attr={"id": "cluster_k8s"}):
+        with Cluster("Ingress Nodes", graph_attr={"id": "cluster_k8s_ingress"}):
+            k8sIngress = NLB("Ingress LB")
+            traefikPods = Pod("Traefik Pods", id="traefikPods")
+        with Cluster(label="Worker Nodes", graph_attr={"id": "cluster_k8s_worker"}):
+            servicePod = Pod("More service pods... ", id="servicePods")
+            servicePods = [Pod("Service POD"), Pod(
+                "Service POD"), Pod("Service POD"), Pod("Service POD")]
+
+    with Cluster("EC2 Services", direction="LR", graph_attr={"id": "ec2"}):
         EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
@@ -51,43 +57,41 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                        EC2("Aperture Authz", id="ec2-Aperture Authz"),
                        EC2("Amplify", id="ec2-Amplify")]
 
-    with Cluster("Skyline"):
+    with Cluster("Skyline", graph_attr={"id": "cluster_skyline"}):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
         skylineBridge = EC2("Skyline Bridge", id="skylineBridge")
 
-    with Cluster("Kubernetes Cluster"):
-        with Cluster("Ingress Nodes"):
-            k8sIngress = NLB("Ingress LB")
-            traefikPods = Pod("Traefik Pods", id="traefikPods")
-        with Cluster(label="Worker Nodes"):
-            servicePod = Pod("More service pods... ", id="servicePods")
-            servicePods = [Pod("Service POD"), Pod("Service POD"), Pod("Service POD"), Pod("Service POD")]
-
-    with Cluster("Event Bus (Kafka)"):
-        with Cluster("VPC"):
+    with Cluster("Event Bus (Kafka)", direction="LR", graph_attr={"id": "cluster_kafka"}):
+        with Cluster("VPC", graph_attr={"id": "cluster_kafka_vpc"}):
             vpcLocal = Kafka(id="VPC Local", label="VPC Local")
             vpcAgg = Kafka(id="VPC Aggregate", label="VPC Aggregate")
-        with Cluster("EC2 Classic aka Limbo"):
+        with Cluster("EC2 Classic aka Limbo", graph_attr={"id": "cluster_kafka_limbo"}):
             limboLocal = Kafka(id="Limbo Local", label="Limbo Local")
             limboAgg = Kafka(id="Limbo Aggregate", label="Limbo Aggregate")
-        
-        kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
+
+        kafka = [vpcLocal, vpcAgg, limboLocal, limboAgg]
         vpcLocal >> limboAgg
         limboLocal >> vpcAgg
 
-    with Cluster("Data Storage"):
+    with Cluster("Data Storage", graph_attr={"id": "cluster_data_storage"}):
         rds = RDS("RDS")
         aurora = Aurora("Aurora")
         memcached = ElasticacheForMemcached("Memcached")
         redis = ElasticacheForRedis("Redis")
         s3 = S3("S3")
         mongodb = EC2("Mongo")
+        datastore = [rds, aurora, memcached, redis, s3, mongodb]
 
 
 # Path:
     EC2Services >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
-    dns >> authFacadeALB >> authFacade >> k8sIngress
-    k8sIngress >> traefikPods >> servicePod >> s3, rds, aurora, memcached, redis, kafka
-    servicePod << Edge(color="red", style="dashed", node=servicePod, forward=True, reverse=True) << kafka
-
+    dns >> authFacadeALB >> authFacade >> k8sIngress, EC2Services
+    servicePod >> Edge(color="black", style="dashed",
+                       node=vpcLocal, forward=True, reverse=True) << kafka
+    k8sIngress >> traefikPods >> Edge(
+        color="black", style="dashed", node=servicePod, forward=True, reverse=True) << servicePods
+    servicePod >> Edge(color="black", style="dashed",
+                       node=servicePod, forward=True, reverse=True) << datastore
+    traefik >> Edge(color="black", style="dashed", node=traefik,
+                    forward=True, reverse=True) << EC2Services
