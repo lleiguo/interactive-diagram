@@ -16,18 +16,18 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
+with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
-    with Cluster(label="Edge"):
+    with Cluster(label="Edge", direction="TB"):
         dns = Route53("dns")
 
-    with Cluster("Auth Facade"):
-        authFacade = AutoScaling("Auth Facade")
-        authFacadeALB = ALB("Auth Facade ALB")
+        with Cluster("Auth Facade"):
+            authFacade = AutoScaling("Auth Facade")
+            authFacadeALB = ALB("Auth Facade ALB")
 
-    with Cluster("Aperture"):
-        apertureNLB = NLB("Aperture NLB", id="apertureNLB")
-        traefik = AutoScaling("Aperture Traefik",  id="traefik")
+        with Cluster("Aperture"):
+            apertureNLB = NLB("Aperture NLB", id="apertureNLB")
+            traefik = AutoScaling("Aperture Traefik",  id="traefik")
 
     ec2attributes = {
         "id": "ec2"
