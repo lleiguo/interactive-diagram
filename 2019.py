@@ -63,14 +63,6 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
             servicePod = Pod("More service pods... ", id="servicePods")
             servicePods = [Pod("Service POD"), Pod("Service POD"), Pod("Service POD"), Pod("Service POD")]
 
-    with Cluster("Data Storage"):
-        rds = RDS("RDS")
-        aurora = Aurora("Aurora")
-        memcached = ElasticacheForMemcached("Memcached")
-        redis = ElasticacheForRedis("Redis")
-        s3 = S3("S3")
-        mongodb = EC2("Mongo")
-
     with Cluster("Event Bus (Kafka)"):
         with Cluster("VPC"):
             vpcLocal = Kafka(id="VPC Local", label="VPC Local")
@@ -82,6 +74,14 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
         kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
         vpcLocal >> limboAgg
         limboLocal >> vpcAgg
+
+    with Cluster("Data Storage"):
+        rds = RDS("RDS")
+        aurora = Aurora("Aurora")
+        memcached = ElasticacheForMemcached("Memcached")
+        redis = ElasticacheForRedis("Redis")
+        s3 = S3("S3")
+        mongodb = EC2("Mongo")
 
 
 # Path:
