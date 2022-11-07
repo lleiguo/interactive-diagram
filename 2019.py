@@ -71,10 +71,10 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
 
     with Cluster("Event Bus (Kafka)"):
 
-        vpcLocal = Kafka(id="VPC Local")
-        vpcAgg = Kafka(id="VPC Aggregate")
-        limboLocal = Kafka(id="Limbo Local"),
-        limboAgg = Kafka(id="Limbo Aggregate")
+        vpcLocal = Kafka(id="VPC Local", label="VPC Local")
+        vpcAgg = Kafka(id="VPC Aggregate", label="VPC Aggregate")
+        limboLocal = Kafka(id="Limbo Local", label="Limbo Local"),
+        limboAgg = Kafka(id="Limbo Aggregate", label="Limbo Aggregate")
         kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
         vpcLocal >> limboAgg
         limboLocal >> vpcAgg
