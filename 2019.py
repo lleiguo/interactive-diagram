@@ -1,5 +1,5 @@
 # 2019.py
-from diagrams import Diagram, Cluster, Node
+from diagrams import Diagram, Cluster, Edge
 
 from diagrams.aws.compute import EC2, AutoScaling
 from diagrams.aws.database import RDS, Aurora, ElasticacheForRedis, ElasticacheForMemcached
@@ -58,10 +58,10 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
     with Cluster("Kubernetes Cluster"):
         with Cluster("Ingress Nodes"):
             k8sIngress = NLB("Ingress LB")
-            traefikPods = Pod("Traefik")
+            traefikPods = Pod("Traefik Pods", id="traefikPods")
         with Cluster(label="Worker Nodes"):
-            servicePods = [Pod("Service POD"), Pod("Service POD"), Pod("Service POD"), Pod("Service POD")]
             servicePod = Pod("More service pods... ", id="servicePods")
+            servicePods = [Pod("Service POD"), Pod("Service POD"), Pod("Service POD"), Pod("Service POD")]
 
     with Cluster("Data Storage"):
         rds = RDS("RDS")
@@ -69,6 +69,7 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
         memcached = ElasticacheForMemcached("Memcached")
         redis = ElasticacheForRedis("Redis")
         s3 = S3("S3")
+        mongodb = EC2("Mongo")
 
     with Cluster("Event Bus (Kafka)"):
         with Cluster("VPC"):
@@ -77,7 +78,7 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
         with Cluster("EC2 Classic aka Limbo"):
             limboLocal = Kafka(id="Limbo Local", label="Limbo Local")
             limboAgg = Kafka(id="Limbo Aggregate", label="Limbo Aggregate")
-
+        
         kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
         vpcLocal >> limboAgg
         limboLocal >> vpcAgg
@@ -87,4 +88,6 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
     EC2Services >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
     dns >> authFacadeALB >> authFacade >> k8sIngress
-    k8sIngress >> traefikPods >> servicePod >> rds, aurora, memcached, redis, s3, kafka
+    k8sIngress >> traefikPods >> servicePod >> s3, rds, aurora, memcached, redis, kafka
+    servicePod << Edge(color="red", style="dashed", node=servicePod, forward=True, reverse=True) << kafka
+
