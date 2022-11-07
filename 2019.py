@@ -60,11 +60,8 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
             k8sIngress = NLB("Ingress LB")
             traefikPods = Pod("Traefik")
         with Cluster(label="Worker Nodes"):
-            servicePod1 = Pod("Service POD")
-            servicePods = Pod("Service POD")
-            servicePods = Pod("Service POD")
-            servicePods = Pod("Service POD")
-            servicePods = Pod("More service pods... ", id="servicePods")
+            servicePods = [Pod("Service POD"), Pod("Service POD"), Pod("Service POD"), Pod("Service POD")]
+            servicePod = Pod("More service pods... ", id="servicePods")
 
     with Cluster("Data Storage"):
         rds = RDS("RDS")
@@ -90,4 +87,4 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
     EC2Services >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
     dns >> authFacadeALB >> authFacade >> k8sIngress
-    k8sIngress >> traefikPods >> servicePods >> rds, aurora, memcached, redis, s3, kafka
+    k8sIngress >> traefikPods >> servicePod >> rds, aurora, memcached, redis, s3, kafka
