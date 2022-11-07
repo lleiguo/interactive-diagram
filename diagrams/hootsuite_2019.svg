@@ -9,26 +9,6 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(144 1574)">
 <title>Hootsuite 2019</title>
 <text text-anchor="middle" x="1651" y="-22" font-family="Sans-Serif" font-size="60.00" fill="#2d3436">Hootsuite 2019</text>
-<g id="clust6" class="cluster">
-<title>cluster_Kubernetes Cluster</title>
-<path fill="#e5f5fd" stroke="#aeb6be" d="M588,-265C588,-265 698,-265 698,-265 704,-265 710,-271 710,-277 710,-277 710,-846 710,-846 710,-852 704,-858 698,-858 698,-858 588,-858 588,-858 582,-858 576,-852 576,-846 576,-846 576,-277 576,-277 576,-271 582,-265 588,-265"/>
-<text text-anchor="middle" x="635.5" y="-844.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Kubernetes Cluster</text>
-</g>
-<g id="clust7" class="cluster">
-<title>cluster_Ingress Nodes</title>
-<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-464C596,-464 690,-464 690,-464 696,-464 702,-470 702,-476 702,-476 702,-817 702,-817 702,-823 696,-829 690,-829 690,-829 596,-829 596,-829 590,-829 584,-823 584,-817 584,-817 584,-476 584,-476 584,-470 590,-464 596,-464"/>
-<text text-anchor="middle" x="631" y="-815.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Ingress Nodes</text>
-</g>
-<g id="clust8" class="cluster">
-<title>cluster_Worker Nodes</title>
-<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-273C596,-273 690,-273 690,-273 696,-273 702,-279 702,-285 702,-285 702,-435 702,-435 702,-441 696,-447 690,-447 690,-447 596,-447 596,-447 590,-447 584,-441 584,-435 584,-435 584,-285 584,-285 584,-279 590,-273 596,-273"/>
-<text text-anchor="middle" x="630.5" y="-433.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Worker Nodes</text>
-</g>
-<g id="clust10" class="cluster">
-<title>cluster_Event Bus (Kafka)</title>
-<path fill="#e5f5fd" stroke="#aeb6be" d="M3044,-1057C3044,-1057 3282,-1057 3282,-1057 3288,-1057 3294,-1063 3294,-1069 3294,-1069 3294,-1410 3294,-1410 3294,-1416 3288,-1422 3282,-1422 3282,-1422 3044,-1422 3044,-1422 3038,-1422 3032,-1416 3032,-1410 3032,-1410 3032,-1069 3032,-1069 3032,-1063 3038,-1057 3044,-1057"/>
-<text text-anchor="middle" x="3088.5" y="-1408.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Event Bus (Kafka)</text>
-</g>
 <g id="clust1" class="cluster">
 <title>cluster_Edge</title>
 <path fill="#e5f5fd" stroke="#aeb6be" d="M452,-1248C452,-1248 546,-1248 546,-1248 552,-1248 558,-1254 558,-1260 558,-1260 558,-1410 558,-1410 558,-1416 552,-1422 546,-1422 546,-1422 452,-1422 452,-1422 446,-1422 440,-1416 440,-1410 440,-1410 440,-1260 440,-1260 440,-1254 446,-1248 452,-1248"/>
@@ -59,395 +39,419 @@
 <path fill="#e5f5fd" stroke="#aeb6be" d="M20,-82C20,-82 690,-82 690,-82 696,-82 702,-88 702,-94 702,-94 702,-244 702,-244 702,-250 696,-256 690,-256 690,-256 20,-256 20,-256 14,-256 8,-250 8,-244 8,-244 8,-94 8,-94 8,-88 14,-82 20,-82"/>
 <text text-anchor="middle" x="51.5" y="-242.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Data Storage</text>
 </g>
-<!-- 7159404623dc4b9bbfae583c1cad3347 -->
+<g id="clust6" class="cluster">
+<title>cluster_Kubernetes Cluster</title>
+<path fill="#e5f5fd" stroke="#aeb6be" d="M588,-265C588,-265 698,-265 698,-265 704,-265 710,-271 710,-277 710,-277 710,-846 710,-846 710,-852 704,-858 698,-858 698,-858 588,-858 588,-858 582,-858 576,-852 576,-846 576,-846 576,-277 576,-277 576,-271 582,-265 588,-265"/>
+<text text-anchor="middle" x="635.5" y="-844.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Kubernetes Cluster</text>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_Ingress Nodes</title>
+<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-464C596,-464 690,-464 690,-464 696,-464 702,-470 702,-476 702,-476 702,-817 702,-817 702,-823 696,-829 690,-829 690,-829 596,-829 596,-829 590,-829 584,-823 584,-817 584,-817 584,-476 584,-476 584,-470 590,-464 596,-464"/>
+<text text-anchor="middle" x="631" y="-815.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Ingress Nodes</text>
+</g>
+<g id="clust8" class="cluster">
+<title>cluster_Worker Nodes</title>
+<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-273C596,-273 690,-273 690,-273 696,-273 702,-279 702,-285 702,-285 702,-435 702,-435 702,-441 696,-447 690,-447 690,-447 596,-447 596,-447 590,-447 584,-441 584,-435 584,-435 584,-285 584,-285 584,-279 590,-273 596,-273"/>
+<text text-anchor="middle" x="630.5" y="-433.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Worker Nodes</text>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_Event Bus (Kafka)</title>
+<path fill="#e5f5fd" stroke="#aeb6be" d="M3044,-1057C3044,-1057 3282,-1057 3282,-1057 3288,-1057 3294,-1063 3294,-1069 3294,-1069 3294,-1410 3294,-1410 3294,-1416 3288,-1422 3282,-1422 3282,-1422 3044,-1422 3044,-1422 3038,-1422 3032,-1416 3032,-1410 3032,-1410 3032,-1069 3032,-1069 3032,-1063 3038,-1057 3044,-1057"/>
+<text text-anchor="middle" x="3088.5" y="-1408.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Event Bus (Kafka)</text>
+</g>
+<!-- e501eb2e534d4d6ab74e393738d9d2eb -->
 <g id="node1" class="node">
-<title>7159404623dc4b9bbfae583c1cad3347</title>
+<title>e501eb2e534d4d6ab74e393738d9d2eb</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/network/route-53.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-1375"/>
 <text text-anchor="middle" x="499" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">dns</text>
 </g>
-<!-- b110ee1f20e04a3ba8c168e307adffc8 -->
+<!-- 399e36c9b09a4ccb8ae144623a42c9d7 -->
 <g id="node3" class="node">
-<title>b110ee1f20e04a3ba8c168e307adffc8</title>
+<title>399e36c9b09a4ccb8ae144623a42c9d7</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/network/elb-application-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-1184"/>
 <text text-anchor="middle" x="499" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Auth Facade ALB</text>
 </g>
-<!-- 7159404623dc4b9bbfae583c1cad3347&#45;&gt;b110ee1f20e04a3ba8c168e307adffc8 -->
+<!-- e501eb2e534d4d6ab74e393738d9d2eb&#45;&gt;399e36c9b09a4ccb8ae144623a42c9d7 -->
 <g id="edge25" class="edge">
-<title>7159404623dc4b9bbfae583c1cad3347&#45;&gt;b110ee1f20e04a3ba8c168e307adffc8</title>
+<title>e501eb2e534d4d6ab74e393738d9d2eb&#45;&gt;399e36c9b09a4ccb8ae144623a42c9d7</title>
 <path fill="none" stroke="#7b8894" d="M482.17,-1256.08C482.17,-1256.08 482.17,-1213.27 482.17,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="485.67,-1213.27 482.17,-1203.27 478.67,-1213.27 485.67,-1213.27"/>
 </g>
-<!-- a0e1c43a9eda4190aa980b6720356286 -->
+<!-- 4b41295ef45d435cb286a0e6d241dea3 -->
 <g id="apertureNLB" class="node">
-<title>a0e1c43a9eda4190aa980b6720356286</title>
+<title>4b41295ef45d435cb286a0e6d241dea3</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/network/elb-network-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-1184"/>
 <text text-anchor="middle" x="643" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture NLB</text>
 </g>
-<!-- 7159404623dc4b9bbfae583c1cad3347&#45;&gt;a0e1c43a9eda4190aa980b6720356286 -->
+<!-- e501eb2e534d4d6ab74e393738d9d2eb&#45;&gt;4b41295ef45d435cb286a0e6d241dea3 -->
 <g id="edge22" class="edge">
-<title>7159404623dc4b9bbfae583c1cad3347&#45;&gt;a0e1c43a9eda4190aa980b6720356286</title>
+<title>e501eb2e534d4d6ab74e393738d9d2eb&#45;&gt;4b41295ef45d435cb286a0e6d241dea3</title>
 <path fill="none" stroke="#7b8894" d="M515.83,-1256.26C515.83,-1236.43 515.83,-1220 515.83,-1220 515.83,-1220 626.17,-1220 626.17,-1220 626.17,-1220 626.17,-1213.17 626.17,-1213.17"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="629.67,-1213.17 626.17,-1203.17 622.67,-1213.17 629.67,-1213.17"/>
 </g>
-<!-- cbe7b3824e224b9cb1effd55a97c34c5 -->
+<!-- 2f7a02a5e58e458da910d1f8691ec5b8 -->
 <g id="node2" class="node">
-<title>cbe7b3824e224b9cb1effd55a97c34c5</title>
+<title>2f7a02a5e58e458da910d1f8691ec5b8</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/application-auto-scaling.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-993"/>
 <text text-anchor="middle" x="499" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Auth Facade</text>
 </g>
-<!-- 78133cf6e7fd434c9dd8bca35d7e2172 -->
+<!-- babd1253ad0e4e38822d7dfc7fb64a8b -->
 <g id="node25" class="node">
-<title>78133cf6e7fd434c9dd8bca35d7e2172</title>
+<title>babd1253ad0e4e38822d7dfc7fb64a8b</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/network/elb-network-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-782"/>
 <text text-anchor="middle" x="643" y="-666.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Ingress LB</text>
 </g>
-<!-- cbe7b3824e224b9cb1effd55a97c34c5&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172 -->
+<!-- 2f7a02a5e58e458da910d1f8691ec5b8&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b -->
 <g id="edge27" class="edge">
-<title>cbe7b3824e224b9cb1effd55a97c34c5&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172</title>
+<title>2f7a02a5e58e458da910d1f8691ec5b8&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b</title>
 <path fill="none" stroke="#7b8894" d="M499,-874.12C499,-812.33 499,-731 499,-731 499,-731 581.12,-731 581.12,-731"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="581.12,-734.5 591.12,-731 581.12,-727.5 581.12,-734.5"/>
 </g>
-<!-- b110ee1f20e04a3ba8c168e307adffc8&#45;&gt;cbe7b3824e224b9cb1effd55a97c34c5 -->
+<!-- 399e36c9b09a4ccb8ae144623a42c9d7&#45;&gt;2f7a02a5e58e458da910d1f8691ec5b8 -->
 <g id="edge26" class="edge">
-<title>b110ee1f20e04a3ba8c168e307adffc8&#45;&gt;cbe7b3824e224b9cb1effd55a97c34c5</title>
+<title>399e36c9b09a4ccb8ae144623a42c9d7&#45;&gt;2f7a02a5e58e458da910d1f8691ec5b8</title>
 <path fill="none" stroke="#7b8894" d="M499,-1065.08C499,-1065.08 499,-1022.27 499,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="502.5,-1022.27 499,-1012.27 495.5,-1022.27 502.5,-1022.27"/>
 </g>
-<!-- 68f8878195c2419ba752f77a4e127bec -->
+<!-- c64265c52d074fa5bc139f7e74d0c03f -->
 <g id="traefik" class="node">
-<title>68f8878195c2419ba752f77a4e127bec</title>
+<title>c64265c52d074fa5bc139f7e74d0c03f</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/application-auto-scaling.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-993"/>
 <text text-anchor="middle" x="643" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture Traefik</text>
 </g>
-<!-- a0e1c43a9eda4190aa980b6720356286&#45;&gt;68f8878195c2419ba752f77a4e127bec -->
+<!-- 4b41295ef45d435cb286a0e6d241dea3&#45;&gt;c64265c52d074fa5bc139f7e74d0c03f -->
 <g id="edge23" class="edge">
-<title>a0e1c43a9eda4190aa980b6720356286&#45;&gt;68f8878195c2419ba752f77a4e127bec</title>
+<title>4b41295ef45d435cb286a0e6d241dea3&#45;&gt;c64265c52d074fa5bc139f7e74d0c03f</title>
 <path fill="none" stroke="#7b8894" d="M643,-1065.08C643,-1065.08 643,-1022.27 643,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-1022.27 643,-1012.27 639.5,-1022.27 646.5,-1022.27"/>
 </g>
-<!-- 68f8878195c2419ba752f77a4e127bec&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172 -->
+<!-- c64265c52d074fa5bc139f7e74d0c03f&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b -->
 <g id="edge24" class="edge">
-<title>68f8878195c2419ba752f77a4e127bec&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172</title>
+<title>c64265c52d074fa5bc139f7e74d0c03f&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b</title>
 <path fill="none" stroke="#7b8894" d="M643,-874.29C643,-874.29 643,-811.35 643,-811.35"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-811.35 643,-801.35 639.5,-811.35 646.5,-811.35"/>
 </g>
-<!-- e766fc62449441298c24ff465e60fbad -->
+<!-- 1fc1ea104ec0472ea6c15fabf0c6ef35 -->
 <g id="ec2&#45;Dashboard&#45;Web" class="node">
-<title>e766fc62449441298c24ff465e60fbad</title>
+<title>1fc1ea104ec0472ea6c15fabf0c6ef35</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2896.5" y="-1375"/>
 <text text-anchor="middle" x="2947" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Web</text>
 </g>
-<!-- fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="skylineLB" class="node">
-<title>fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>8ae7a410318746dfa01ef00abcf3a00c</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/network/elb-application-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1672.5" y="-1184"/>
 <text text-anchor="middle" x="1723" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Skyline ALB</text>
 </g>
-<!-- e766fc62449441298c24ff465e60fbad&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 1fc1ea104ec0472ea6c15fabf0c6ef35&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge3" class="edge">
-<title>e766fc62449441298c24ff465e60fbad&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>1fc1ea104ec0472ea6c15fabf0c6ef35&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2947,-1256.07C2947,-1183.74 2947,-1080 2947,-1080 2947,-1080 1784.78,-1080 1784.78,-1080"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.78,-1076.5 1774.78,-1080 1784.78,-1083.5 1784.78,-1076.5"/>
 </g>
-<!-- 62680f3a37fe4d2cb4e2b704c1ac2009 -->
+<!-- 13ff29d72eb94e4fa2682a6ad3fe0909 -->
 <g id="ec2&#45;Dashboard&#45;Gear" class="node">
-<title>62680f3a37fe4d2cb4e2b704c1ac2009</title>
+<title>13ff29d72eb94e4fa2682a6ad3fe0909</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2752.5" y="-1375"/>
 <text text-anchor="middle" x="2803" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Gear</text>
 </g>
-<!-- 62680f3a37fe4d2cb4e2b704c1ac2009&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 13ff29d72eb94e4fa2682a6ad3fe0909&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge4" class="edge">
-<title>62680f3a37fe4d2cb4e2b704c1ac2009&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>13ff29d72eb94e4fa2682a6ad3fe0909&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2803,-1256.26C2803,-1188.61 2803,-1095 2803,-1095 2803,-1095 1784.8,-1095 1784.8,-1095"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.8,-1091.5 1774.8,-1095 1784.8,-1098.5 1784.8,-1091.5"/>
 </g>
-<!-- c3da6d63a6574d76ad02370dbf200113 -->
+<!-- 7918f32a7a714519b246398b2a342820 -->
 <g id="ec2&#45;Dashboard&#45;Cron" class="node">
-<title>c3da6d63a6574d76ad02370dbf200113</title>
+<title>7918f32a7a714519b246398b2a342820</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2608.5" y="-1375"/>
 <text text-anchor="middle" x="2659" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Cron</text>
 </g>
-<!-- c3da6d63a6574d76ad02370dbf200113&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 7918f32a7a714519b246398b2a342820&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge5" class="edge">
-<title>c3da6d63a6574d76ad02370dbf200113&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>7918f32a7a714519b246398b2a342820&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2659,-1256.04C2659,-1193.27 2659,-1110 2659,-1110 2659,-1110 1784.84,-1110 1784.84,-1110"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.84,-1106.5 1774.84,-1110 1784.84,-1113.5 1784.84,-1106.5"/>
 </g>
-<!-- b688bcfdb7544cc8b3b80e2942e78937 -->
+<!-- 1c5a642e62fc419993784a89382eb782 -->
 <g id="ec2&#45;Member" class="node">
-<title>b688bcfdb7544cc8b3b80e2942e78937</title>
+<title>1c5a642e62fc419993784a89382eb782</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2464.5" y="-1375"/>
 <text text-anchor="middle" x="2515" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Member</text>
 </g>
-<!-- b688bcfdb7544cc8b3b80e2942e78937&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 1c5a642e62fc419993784a89382eb782&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge6" class="edge">
-<title>b688bcfdb7544cc8b3b80e2942e78937&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>1c5a642e62fc419993784a89382eb782&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2515,-1256.12C2515,-1198.37 2515,-1125 2515,-1125 2515,-1125 1784.96,-1125 1784.96,-1125"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.96,-1121.5 1774.96,-1125 1784.96,-1128.5 1784.96,-1121.5"/>
 </g>
-<!-- 7510968b603440069a141266fe4d7bde -->
+<!-- 65549ee301b84c36a4873543bbf07c18 -->
 <g id="ec2&#45;SCUM" class="node">
-<title>7510968b603440069a141266fe4d7bde</title>
+<title>65549ee301b84c36a4873543bbf07c18</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2320.5" y="-1375"/>
 <text text-anchor="middle" x="2371" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">SCUM</text>
 </g>
-<!-- 7510968b603440069a141266fe4d7bde&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 65549ee301b84c36a4873543bbf07c18&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge7" class="edge">
-<title>7510968b603440069a141266fe4d7bde&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>65549ee301b84c36a4873543bbf07c18&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2371,-1256.17C2371,-1204 2371,-1141 2371,-1141 2371,-1141 1784.82,-1141 1784.82,-1141"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.82,-1137.5 1774.82,-1141 1784.82,-1144.5 1784.82,-1137.5"/>
 </g>
-<!-- a173edced61c47b4bd3d1c384e44105c -->
+<!-- a3f82c9cea544bc99f6b26064302427d -->
 <g id="ec2&#45;Billing" class="node">
-<title>a173edced61c47b4bd3d1c384e44105c</title>
+<title>a3f82c9cea544bc99f6b26064302427d</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2176.5" y="-1375"/>
 <text text-anchor="middle" x="2227" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Billing</text>
 </g>
-<!-- a173edced61c47b4bd3d1c384e44105c&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- a3f82c9cea544bc99f6b26064302427d&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge8" class="edge">
-<title>a173edced61c47b4bd3d1c384e44105c&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>a3f82c9cea544bc99f6b26064302427d&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2227,-1256.45C2227,-1209.69 2227,-1156 2227,-1156 2227,-1156 1784.68,-1156 1784.68,-1156"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.68,-1152.5 1774.68,-1156 1784.68,-1159.5 1784.68,-1152.5"/>
 </g>
-<!-- b355a3f3b82e457bb636194efaf9f9be -->
+<!-- 9cb284cf5a0c4372ab1969725b64fe3a -->
 <g id="ec2&#45;Message Achieve" class="node">
-<title>b355a3f3b82e457bb636194efaf9f9be</title>
+<title>9cb284cf5a0c4372ab1969725b64fe3a</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2032.5" y="-1375"/>
 <text text-anchor="middle" x="2083" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Message Achieve</text>
 </g>
-<!-- b355a3f3b82e457bb636194efaf9f9be&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 9cb284cf5a0c4372ab1969725b64fe3a&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge9" class="edge">
-<title>b355a3f3b82e457bb636194efaf9f9be&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>9cb284cf5a0c4372ab1969725b64fe3a&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M2083,-1256.28C2083,-1215.28 2083,-1171 2083,-1171 2083,-1171 1784.95,-1171 1784.95,-1171"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.95,-1167.5 1774.95,-1171 1784.95,-1174.5 1784.95,-1167.5"/>
 </g>
-<!-- 4b27149c089549b2a28525e9c130d5b9 -->
+<!-- b3b101cfa7e043008fcbff50dda31c69 -->
 <g id="ec2&#45;Message Review" class="node">
-<title>4b27149c089549b2a28525e9c130d5b9</title>
+<title>b3b101cfa7e043008fcbff50dda31c69</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1888.5" y="-1375"/>
 <text text-anchor="middle" x="1939" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Message Review</text>
 </g>
-<!-- 4b27149c089549b2a28525e9c130d5b9&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- b3b101cfa7e043008fcbff50dda31c69&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge10" class="edge">
-<title>4b27149c089549b2a28525e9c130d5b9&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>b3b101cfa7e043008fcbff50dda31c69&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1939,-1256.06C1939,-1221.17 1939,-1186 1939,-1186 1939,-1186 1784.88,-1186 1784.88,-1186"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.88,-1182.5 1774.88,-1186 1784.88,-1189.5 1784.88,-1182.5"/>
 </g>
-<!-- c5f3a3c3d3574ce8ab7bfe3155c5b252 -->
+<!-- 671cf3921e3249f48801c00c8e7d00bd -->
 <g id="ec2&#45;Scheduled Data" class="node">
-<title>c5f3a3c3d3574ce8ab7bfe3155c5b252</title>
+<title>671cf3921e3249f48801c00c8e7d00bd</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1744.5" y="-1375"/>
 <text text-anchor="middle" x="1795" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Scheduled Data</text>
 </g>
-<!-- c5f3a3c3d3574ce8ab7bfe3155c5b252&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 671cf3921e3249f48801c00c8e7d00bd&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge11" class="edge">
-<title>c5f3a3c3d3574ce8ab7bfe3155c5b252&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>671cf3921e3249f48801c00c8e7d00bd&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1759,-1256.08C1759,-1256.08 1759,-1213.27 1759,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1762.5,-1213.27 1759,-1203.27 1755.5,-1213.27 1762.5,-1213.27"/>
 </g>
-<!-- 4bc42111430b49d689715687fd20f352 -->
+<!-- d4f42db54a9c49f6bb2a3a41748b089c -->
 <g id="ec2&#45;Core" class="node">
-<title>4bc42111430b49d689715687fd20f352</title>
+<title>d4f42db54a9c49f6bb2a3a41748b089c</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1600.5" y="-1375"/>
 <text text-anchor="middle" x="1651" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Core</text>
 </g>
-<!-- 4bc42111430b49d689715687fd20f352&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- d4f42db54a9c49f6bb2a3a41748b089c&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge12" class="edge">
-<title>4bc42111430b49d689715687fd20f352&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>d4f42db54a9c49f6bb2a3a41748b089c&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1691.83,-1256.08C1691.83,-1256.08 1691.83,-1213.27 1691.83,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1695.33,-1213.27 1691.83,-1203.27 1688.33,-1213.27 1695.33,-1213.27"/>
 </g>
-<!-- 3816d3ca99f74e90ab68fa68831340e9 -->
+<!-- 1e91a127ce79489bb5a6189c609952ec -->
 <g id="ec2&#45;TOPS" class="node">
-<title>3816d3ca99f74e90ab68fa68831340e9</title>
+<title>1e91a127ce79489bb5a6189c609952ec</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1456.5" y="-1375"/>
 <text text-anchor="middle" x="1507" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">TOPS</text>
 </g>
-<!-- 3816d3ca99f74e90ab68fa68831340e9&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 1e91a127ce79489bb5a6189c609952ec&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge13" class="edge">
-<title>3816d3ca99f74e90ab68fa68831340e9&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>1e91a127ce79489bb5a6189c609952ec&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1507,-1256.17C1507,-1219.6 1507,-1182 1507,-1182 1507,-1182 1661.12,-1182 1661.12,-1182"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.12,-1185.5 1671.12,-1182 1661.12,-1178.5 1661.12,-1185.5"/>
 </g>
-<!-- 95fa57cd4a2a4eebb904de6781fef85d -->
+<!-- 4083cf2f33c54e3dba2c4e9073d8b25a -->
 <g id="ec2&#45;GSS" class="node">
-<title>95fa57cd4a2a4eebb904de6781fef85d</title>
+<title>4083cf2f33c54e3dba2c4e9073d8b25a</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1312.5" y="-1375"/>
 <text text-anchor="middle" x="1363" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">GSS</text>
 </g>
-<!-- 95fa57cd4a2a4eebb904de6781fef85d&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- 4083cf2f33c54e3dba2c4e9073d8b25a&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge14" class="edge">
-<title>95fa57cd4a2a4eebb904de6781fef85d&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>4083cf2f33c54e3dba2c4e9073d8b25a&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1363,-1256.06C1363,-1211.65 1363,-1162 1363,-1162 1363,-1162 1661.05,-1162 1661.05,-1162"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.05,-1165.5 1671.05,-1162 1661.05,-1158.5 1661.05,-1165.5"/>
 </g>
-<!-- 1ebab7627b264a068904fa84cc6df53f -->
+<!-- e462ac4c53054ab89c8bc63671c48a74 -->
 <g id="ec2&#45;HootSupport" class="node">
-<title>1ebab7627b264a068904fa84cc6df53f</title>
+<title>e462ac4c53054ab89c8bc63671c48a74</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1168.5" y="-1375"/>
 <text text-anchor="middle" x="1219" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">HootSupport</text>
 </g>
-<!-- 1ebab7627b264a068904fa84cc6df53f&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- e462ac4c53054ab89c8bc63671c48a74&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge15" class="edge">
-<title>1ebab7627b264a068904fa84cc6df53f&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>e462ac4c53054ab89c8bc63671c48a74&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1219,-1256.14C1219,-1204.69 1219,-1143 1219,-1143 1219,-1143 1661.32,-1143 1661.32,-1143"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.32,-1146.5 1671.32,-1143 1661.32,-1139.5 1661.32,-1146.5"/>
 </g>
-<!-- 0722d8a14991456dbab22066f5966a1c -->
+<!-- e2857de1efda45558ab7fa9f1f33d4c9 -->
 <g id="ec2&#45;Push Notifications" class="node">
-<title>0722d8a14991456dbab22066f5966a1c</title>
+<title>e2857de1efda45558ab7fa9f1f33d4c9</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1024.5" y="-1375"/>
 <text text-anchor="middle" x="1075" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Push Notifications</text>
 </g>
-<!-- 0722d8a14991456dbab22066f5966a1c&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- e2857de1efda45558ab7fa9f1f33d4c9&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge16" class="edge">
-<title>0722d8a14991456dbab22066f5966a1c&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>e2857de1efda45558ab7fa9f1f33d4c9&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M1075,-1256C1075,-1197.58 1075,-1123 1075,-1123 1075,-1123 1661.18,-1123 1661.18,-1123"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.18,-1126.5 1671.18,-1123 1661.18,-1119.5 1661.18,-1126.5"/>
 </g>
-<!-- 2fd64fbcfcd844569b96b4364bf9a993 -->
+<!-- d93bc33c0cc743c2bce4f5fb17456837 -->
 <g id="ec2&#45;Crypto" class="node">
-<title>2fd64fbcfcd844569b96b4364bf9a993</title>
+<title>d93bc33c0cc743c2bce4f5fb17456837</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="880.5" y="-1375"/>
 <text text-anchor="middle" x="931" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Crypto</text>
 </g>
-<!-- 2fd64fbcfcd844569b96b4364bf9a993&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- d93bc33c0cc743c2bce4f5fb17456837&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge17" class="edge">
-<title>2fd64fbcfcd844569b96b4364bf9a993&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>d93bc33c0cc743c2bce4f5fb17456837&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M931,-1256.24C931,-1191.48 931,-1104 931,-1104 931,-1104 1661.04,-1104 1661.04,-1104"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.04,-1107.5 1671.04,-1104 1661.04,-1100.5 1661.04,-1107.5"/>
 </g>
-<!-- 15041b1fe8f84ca18658ee9a2677c6c7 -->
+<!-- c2420c592c8243ba919c0114db11f521 -->
 <g id="ec2&#45;Aperture Authz" class="node">
-<title>15041b1fe8f84ca18658ee9a2677c6c7</title>
+<title>c2420c592c8243ba919c0114db11f521</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="736.5" y="-1375"/>
 <text text-anchor="middle" x="787" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture Authz</text>
 </g>
-<!-- 15041b1fe8f84ca18658ee9a2677c6c7&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- c2420c592c8243ba919c0114db11f521&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge18" class="edge">
-<title>15041b1fe8f84ca18658ee9a2677c6c7&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>c2420c592c8243ba919c0114db11f521&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M787,-1256.23C787,-1185.12 787,-1084 787,-1084 787,-1084 1661.16,-1084 1661.16,-1084"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.16,-1087.5 1671.16,-1084 1661.16,-1080.5 1661.16,-1087.5"/>
 </g>
-<!-- 01da6c597e454ede9baad9e4a506f1ee -->
+<!-- e9965f18397f4106864cd80b10f6823e -->
 <g id="ec2&#45;Amplify" class="node">
-<title>01da6c597e454ede9baad9e4a506f1ee</title>
+<title>e9965f18397f4106864cd80b10f6823e</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-1375"/>
 <text text-anchor="middle" x="643" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Amplify</text>
 </g>
-<!-- 01da6c597e454ede9baad9e4a506f1ee&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef -->
+<!-- e9965f18397f4106864cd80b10f6823e&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c -->
 <g id="edge19" class="edge">
-<title>01da6c597e454ede9baad9e4a506f1ee&#45;&gt;fdb933f1f659416cb6aca53972eeb5ef</title>
+<title>e9965f18397f4106864cd80b10f6823e&#45;&gt;8ae7a410318746dfa01ef00abcf3a00c</title>
 <path fill="none" stroke="#7b8894" d="M659.83,-1256.34C659.83,-1245.62 659.83,-1238 659.83,-1238 659.83,-1238 1682.17,-1238 1682.17,-1238 1682.17,-1238 1682.17,-1213.26 1682.17,-1213.26"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1685.67,-1213.26 1682.17,-1203.26 1678.67,-1213.26 1685.67,-1213.26"/>
 </g>
-<!-- c5ea452dd8154bcba10666ab826d7390 -->
+<!-- 5deeb431a81240639a76e12f74ff8cc8 -->
 <g id="skylineBridge" class="node">
-<title>c5ea452dd8154bcba10666ab826d7390</title>
+<title>5deeb431a81240639a76e12f74ff8cc8</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1672.5" y="-993"/>
 <text text-anchor="middle" x="1723" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Skyline Bridge</text>
 </g>
-<!-- fdb933f1f659416cb6aca53972eeb5ef&#45;&gt;c5ea452dd8154bcba10666ab826d7390 -->
+<!-- 8ae7a410318746dfa01ef00abcf3a00c&#45;&gt;5deeb431a81240639a76e12f74ff8cc8 -->
 <g id="edge20" class="edge">
-<title>fdb933f1f659416cb6aca53972eeb5ef&#45;&gt;c5ea452dd8154bcba10666ab826d7390</title>
+<title>8ae7a410318746dfa01ef00abcf3a00c&#45;&gt;5deeb431a81240639a76e12f74ff8cc8</title>
 <path fill="none" stroke="#7b8894" d="M1723,-1065.08C1723,-1065.08 1723,-1022.27 1723,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1726.5,-1022.27 1723,-1012.27 1719.5,-1022.27 1726.5,-1022.27"/>
 </g>
-<!-- c5ea452dd8154bcba10666ab826d7390&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172 -->
+<!-- 5deeb431a81240639a76e12f74ff8cc8&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b -->
 <g id="edge21" class="edge">
-<title>c5ea452dd8154bcba10666ab826d7390&#45;&gt;78133cf6e7fd434c9dd8bca35d7e2172</title>
+<title>5deeb431a81240639a76e12f74ff8cc8&#45;&gt;babd1253ad0e4e38822d7dfc7fb64a8b</title>
 <path fill="none" stroke="#7b8894" d="M1723,-874.12C1723,-812.33 1723,-731 1723,-731 1723,-731 704.8,-731 704.8,-731"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="704.8,-727.5 694.8,-731 704.8,-734.5 704.8,-727.5"/>
 </g>
-<!-- 61a162e6079d417ab2590130cac824f8 -->
+<!-- c48ddd61797e477687816aa4338a0787 -->
 <g id="node26" class="node">
-<title>61a162e6079d417ab2590130cac824f8</title>
+<title>c48ddd61797e477687816aa4338a0787</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-591"/>
 <text text-anchor="middle" x="643" y="-475.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Traefik</text>
 </g>
-<!-- 78133cf6e7fd434c9dd8bca35d7e2172&#45;&gt;61a162e6079d417ab2590130cac824f8 -->
+<!-- babd1253ad0e4e38822d7dfc7fb64a8b&#45;&gt;c48ddd61797e477687816aa4338a0787 -->
 <g id="edge28" class="edge">
-<title>78133cf6e7fd434c9dd8bca35d7e2172&#45;&gt;61a162e6079d417ab2590130cac824f8</title>
+<title>babd1253ad0e4e38822d7dfc7fb64a8b&#45;&gt;c48ddd61797e477687816aa4338a0787</title>
 <path fill="none" stroke="#7b8894" d="M643,-663.08C643,-663.08 643,-620.27 643,-620.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-620.27 643,-610.27 639.5,-620.27 646.5,-620.27"/>
 </g>
-<!-- eda74a88814a45049d584ace7ad630be -->
+<!-- 9fffcf498e464e0a8d42923d60de1a6e -->
 <g id="servicePods" class="node">
-<title>eda74a88814a45049d584ace7ad630be</title>
+<title>9fffcf498e464e0a8d42923d60de1a6e</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-400"/>
 <text text-anchor="middle" x="643" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">100+ Microservices</text>
 </g>
-<!-- 61a162e6079d417ab2590130cac824f8&#45;&gt;eda74a88814a45049d584ace7ad630be -->
+<!-- c48ddd61797e477687816aa4338a0787&#45;&gt;9fffcf498e464e0a8d42923d60de1a6e -->
 <g id="edge29" class="edge">
-<title>61a162e6079d417ab2590130cac824f8&#45;&gt;eda74a88814a45049d584ace7ad630be</title>
+<title>c48ddd61797e477687816aa4338a0787&#45;&gt;9fffcf498e464e0a8d42923d60de1a6e</title>
 <path fill="none" stroke="#7b8894" d="M643,-472.08C643,-472.08 643,-429.27 643,-429.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-429.27 643,-419.27 639.5,-429.27 646.5,-429.27"/>
 </g>
-<!-- e001c4412f0f4c12b4f12c2751d11de7 -->
+<!-- 565c1e8bb1a74e2e9e7da4bac006a5d9 -->
 <g id="node28" class="node">
-<title>e001c4412f0f4c12b4f12c2751d11de7</title>
+<title>565c1e8bb1a74e2e9e7da4bac006a5d9</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/database/rds.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-209"/>
 <text text-anchor="middle" x="643" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">RDS</text>
 </g>
-<!-- eda74a88814a45049d584ace7ad630be&#45;&gt;e001c4412f0f4c12b4f12c2751d11de7 -->
+<!-- 9fffcf498e464e0a8d42923d60de1a6e&#45;&gt;565c1e8bb1a74e2e9e7da4bac006a5d9 -->
 <g id="edge30" class="edge">
-<title>eda74a88814a45049d584ace7ad630be&#45;&gt;e001c4412f0f4c12b4f12c2751d11de7</title>
+<title>9fffcf498e464e0a8d42923d60de1a6e&#45;&gt;565c1e8bb1a74e2e9e7da4bac006a5d9</title>
 <path fill="none" stroke="#7b8894" d="M643,-281.08C643,-281.08 643,-238.27 643,-238.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-238.27 643,-228.27 639.5,-238.27 646.5,-238.27"/>
 </g>
-<!-- 023c3426273f4399907259fa919de9fa -->
+<!-- 680eeb5d60324c1389e461f1c1a22373 -->
 <g id="node29" class="node">
-<title>023c3426273f4399907259fa919de9fa</title>
+<title>680eeb5d60324c1389e461f1c1a22373</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/database/aurora.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-209"/>
 <text text-anchor="middle" x="499" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aurora</text>
 </g>
-<!-- 1cc888d3e67e48e8963cc155f346e011 -->
+<!-- addf79a656fb4518a74eeb41c29ebd51 -->
 <g id="node30" class="node">
-<title>1cc888d3e67e48e8963cc155f346e011</title>
+<title>addf79a656fb4518a74eeb41c29ebd51</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/database/elasticache-for-memcached.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="304.5" y="-209"/>
 <text text-anchor="middle" x="355" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Memcached</text>
 </g>
-<!-- 23997d6ba93143b39e45b38c284ed4bc -->
+<!-- 94a77f22fac1441c95d4a2c80cd8a047 -->
 <g id="node31" class="node">
-<title>23997d6ba93143b39e45b38c284ed4bc</title>
+<title>94a77f22fac1441c95d4a2c80cd8a047</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/database/elasticache-for-redis.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="160.5" y="-209"/>
 <text text-anchor="middle" x="211" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Redis</text>
 </g>
-<!-- 03ac2b7121e04e5aabe9761b22c65d9e -->
+<!-- 438c351f8c9245d0a26513a73405bae6 -->
 <g id="node32" class="node">
-<title>03ac2b7121e04e5aabe9761b22c65d9e</title>
+<title>438c351f8c9245d0a26513a73405bae6</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/aws/storage/simple-storage-service-s3.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="16.5" y="-209"/>
 <text text-anchor="middle" x="67" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">S3</text>
 </g>
-<!-- 9e4c9a45946042c8b7f0822ea3a91c7e -->
+<!-- 9710cac7f7244b0bb5d6726a7b8daab7 -->
 <g id="VPC Local" class="node">
-<title>9e4c9a45946042c8b7f0822ea3a91c7e</title>
+<title>9710cac7f7244b0bb5d6726a7b8daab7</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3184.5" y="-1375"/>
+<text text-anchor="middle" x="3235" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">VPC Local</text>
 </g>
-<!-- e216a5a91c364932b297b82f07cf334f -->
+<!-- 58bdaabdf8f54fd798178381c213467a -->
 <g id="Limbo Aggregate" class="node">
-<title>e216a5a91c364932b297b82f07cf334f</title>
+<title>58bdaabdf8f54fd798178381c213467a</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3184.5" y="-1184"/>
+<text text-anchor="middle" x="3235" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Limbo Aggregate</text>
 </g>
-<!-- 9e4c9a45946042c8b7f0822ea3a91c7e&#45;&gt;e216a5a91c364932b297b82f07cf334f -->
+<!-- 9710cac7f7244b0bb5d6726a7b8daab7&#45;&gt;58bdaabdf8f54fd798178381c213467a -->
 <g id="edge1" class="edge">
-<title>9e4c9a45946042c8b7f0822ea3a91c7e&#45;&gt;e216a5a91c364932b297b82f07cf334f</title>
+<title>9710cac7f7244b0bb5d6726a7b8daab7&#45;&gt;58bdaabdf8f54fd798178381c213467a</title>
 <path fill="none" stroke="#7b8894" d="M3235,-1256.08C3235,-1256.08 3235,-1213.27 3235,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="3238.5,-1213.27 3235,-1203.27 3231.5,-1213.27 3238.5,-1213.27"/>
 </g>
-<!-- e32320ef237b49079bfe95b054c70ae6 -->
+<!-- 51a9dc9a0d004c4e8014a39ac3794b4a -->
 <g id="Limbo Local" class="node">
-<title>e32320ef237b49079bfe95b054c70ae6</title>
+<title>51a9dc9a0d004c4e8014a39ac3794b4a</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3040.5" y="-1375"/>
+<text text-anchor="middle" x="3091" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Limbo Local</text>
 </g>
-<!-- f11ca7f4008c42969daa0f44f68e63cb -->
+<!-- 417882d46b064efc8d86486c840d2c14 -->
 <g id="VPC Aggregate" class="node">
-<title>f11ca7f4008c42969daa0f44f68e63cb</title>
+<title>417882d46b064efc8d86486c840d2c14</title>
 <image xlink:href="/Users/lei.guo/Library/Python/3.9/lib/python/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3040.5" y="-1184"/>
+<text text-anchor="middle" x="3091" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">VPC Aggregate</text>
 </g>
-<!-- e32320ef237b49079bfe95b054c70ae6&#45;&gt;f11ca7f4008c42969daa0f44f68e63cb -->
+<!-- 51a9dc9a0d004c4e8014a39ac3794b4a&#45;&gt;417882d46b064efc8d86486c840d2c14 -->
 <g id="edge2" class="edge">
-<title>e32320ef237b49079bfe95b054c70ae6&#45;&gt;f11ca7f4008c42969daa0f44f68e63cb</title>
+<title>51a9dc9a0d004c4e8014a39ac3794b4a&#45;&gt;417882d46b064efc8d86486c840d2c14</title>
 <path fill="none" stroke="#7b8894" d="M3091,-1256.08C3091,-1256.08 3091,-1213.27 3091,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="3094.5,-1213.27 3091,-1203.27 3087.5,-1213.27 3094.5,-1213.27"/>
 </g>
