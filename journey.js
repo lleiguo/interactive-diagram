@@ -115,5 +115,5 @@ d3.xml(svgURL).then((data) => {
   d3.select("[id=aperture]").on("click", function () {
     const apertureCluster = svg.selectAll("[id^=aperture]").nodes();
     remove(apertureCluster);
-  }
+  });
 });
