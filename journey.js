@@ -22,7 +22,7 @@ const getElementBBox = (element) => {
 };
 
 var svgURL =
-  //"https://raw.githubusercontent.com/lleiguo/interactive-diagram/main/base.svg";
+  "https://raw.githubusercontent.com/lleiguo/interactive-diagram/main/base.svg";
 d3.xml(svgURL).then((data) => {
   d3.select("#svg-container").node().append(data.documentElement);
 
@@ -88,7 +88,7 @@ d3.xml(svgURL).then((data) => {
     const workerNode = d3.select("[id=clust8]").select("path");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    expand(workerNode, ec2.length +6);
+    expand(workerNode, ec2.length + 6);
 
     const servicePods = d3.select("#servicePods").node();
     const servicePodsBox = getElementBBox(servicePods);
