@@ -16,7 +16,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram("Hootsuite 2019", show=True, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
+with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
     with Cluster(label="Edge"):
         dns = Route53("dns")
@@ -33,23 +33,23 @@ with Diagram("Hootsuite 2019", show=True, direction="TB", graph_attr=graph_attr,
         "id": "ec2"
     }
     with Cluster("EC2 Services"):
-       EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
-        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
-        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
-        EC2("Member" , id="ec2-Member"),
-        EC2("SCUM"  , id="ec2-SCUM"),
-        EC2("Billing"   , id="ec2-Billing"),
-        EC2("Message Achieve"  , id="ec2-Message Achieve"),
-        EC2("Message Review"    , id="ec2-Message Review"),
-        EC2("Scheduled Data"    , id="ec2-Scheduled Data"),
-        EC2("Core"   , id="ec2-Core"),
-        EC2("TOPS"  , id="ec2-TOPS"),
-        EC2("GSS"   , id="ec2-GSS"),
-        EC2("HootSupport"   , id="ec2-HootSupport"),
-        EC2("Push Notifications"  , id="ec2-Push Notifications"),
-        EC2("Crypto"    , id="ec2-Crypto"),
-        EC2("Aperture Authz"    , id="ec2-Aperture Authz"),
-        EC2("Amplify"   , id="ec2-Amplify")]
+        EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
+                       EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
+                       EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
+                       EC2("Member", id="ec2-Member"),
+                       EC2("SCUM", id="ec2-SCUM"),
+                       EC2("Billing", id="ec2-Billing"),
+                       EC2("Message Achieve", id="ec2-Message Achieve"),
+                       EC2("Message Review", id="ec2-Message Review"),
+                       EC2("Scheduled Data", id="ec2-Scheduled Data"),
+                       EC2("Core", id="ec2-Core"),
+                       EC2("TOPS", id="ec2-TOPS"),
+                       EC2("GSS", id="ec2-GSS"),
+                       EC2("HootSupport", id="ec2-HootSupport"),
+                       EC2("Push Notifications", id="ec2-Push Notifications"),
+                       EC2("Crypto", id="ec2-Crypto"),
+                       EC2("Aperture Authz", id="ec2-Aperture Authz"),
+                       EC2("Amplify", id="ec2-Amplify")]
 
     with Cluster("Skyline"):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
@@ -63,19 +63,24 @@ with Diagram("Hootsuite 2019", show=True, direction="TB", graph_attr=graph_attr,
             servicePods = Pod("100+ Microservices", id="servicePods")
 
     with Cluster("Data Storage"):
-       rds = RDS("RDS")
-       aurora = Aurora("Aurora")
-       memcached =  ElasticacheForMemcached("Memcached")
-       redis =  ElasticacheForRedis("Redis")
-       s3 = S3("S3")
+        rds = RDS("RDS")
+        aurora = Aurora("Aurora")
+        memcached = ElasticacheForMemcached("Memcached")
+        redis = ElasticacheForRedis("Redis")
+        s3 = S3("S3")
 
     with Cluster("Event Bus (Kafka)"):
-        kafka = [Kafka("Kafka Limbo Aggregate"),
-                 Kafka("Kafka Limbo Local"), 
-                 Kafka("Kafka VPC Aggregate"), 
-                 Kafka("Kafka Limbo Local")]
 
-# Path: 
+        vpcLocal = Kafka(id="VPC Local")
+        vpcAgg = Kafka(id="VPC Aggregate")
+        limboLocal = Kafka(id="Limbo Local"),
+        limboAgg = Kafka(id="Limbo Aggregate")
+        kafka = [vpcLocal, vpcAgg,limboLocal,limboAgg]
+        vpcLocal >> limboAgg
+        limboLocal >> vpcAgg
+
+
+# Path:
     EC2Services >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
     dns >> authFacadeALB >> authFacade >> k8sIngress

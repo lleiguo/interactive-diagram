@@ -28,6 +28,7 @@ d3.xml(svgURL).then((data) => {
 
   const svg = d3.select("svg");
 
+  //transform a set of nodes to new location with new style
   const transformPosAndStyle = (nodes, index, moveTo, tag, attr, value) => {
     const node = nodes[index];
     d3.select(node)
@@ -35,7 +36,7 @@ d3.xml(svgURL).then((data) => {
       .duration(5000)
       .attrTween("transform", function () {
         const nodeBox = getElementBBox(node);
-        const x = moveTo.x - nodeBox.x + nodeBox.w * (index + 1);
+        const x = 125;
         const y = moveTo.y - nodeBox.y;
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
@@ -50,14 +51,15 @@ d3.xml(svgURL).then((data) => {
       });
   };
 
-  const expand = (element, size) => {
+  //Expand the given element size by times
+  const expand = (element, times) => {
     const elementBox = getElementBBox(element.node());
 
     const path = d3.path();
     path.moveTo(elementBox.x, elementBox.y);
-    path.lineTo(elementBox.x + elementBox.w * (size - 1), elementBox.y);
+    path.lineTo(elementBox.x + elementBox.w * (times - 1), elementBox.y);
     path.lineTo(
-      elementBox.x + elementBox.w * (size - 1),
+      elementBox.x + elementBox.w * (times - 1),
       elementBox.y + elementBox.h
     );
     path.lineTo(elementBox.x, elementBox.y + elementBox.h);
@@ -66,6 +68,7 @@ d3.xml(svgURL).then((data) => {
     element.attr("d", path);
   };
 
+  //Remove the given nodes with animation
   const remove = (nodes) => {
     nodes.forEach((node) => {
       d3.select(node)
@@ -80,11 +83,12 @@ d3.xml(svgURL).then((data) => {
     });
   };
 
+  // EC2 migration animation
   d3.select("[id=clust4]").on("click", function () {
     const workerNode = d3.select("[id=clust8]").select("path");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    expand(workerNode, ec2.length);
+    expand(workerNode, ec2.length +6);
 
     const servicePods = d3.select("#servicePods").node();
     const servicePodsBox = getElementBBox(servicePods);
@@ -101,6 +105,7 @@ d3.xml(svgURL).then((data) => {
     );
   });
 
+  // Skyline deprecation animation
   d3.select("[id=skyline]").on("click", function () {
     const skylineCluster = svg.selectAll("[id^=skyline]").nodes();
     remove(skylineCluster);
