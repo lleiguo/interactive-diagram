@@ -27,75 +27,82 @@ d3.xml(svgURL).then((data) => {
   d3.select("#svg-container").node().append(data.documentElement);
 
   const svg = d3.select("svg");
-  const ec2 = svg.selectAll("[id^=ec2]").nodes();
-  const servicePods = d3.select("#servicePods").node();
-  const servicePodsPos = getElementBBox(servicePods);
-  const workerNode = d3.select("[id=clust8]").select("path");
-  const workerNodePos = getElementBBox(workerNode.node());
 
-  const ec2Migration = (i) => {
-    d3.select(ec2[i])
+  const transformPosAndStyle = (nodes, index, moveTo, tag, attr, value) => {
+    const node = nodes[index];
+    d3.select(node)
       .transition()
       .duration(5000)
       .attrTween("transform", function () {
-        const ec2Pos = getElementBBox(ec2[i]);
-        const x = servicePodsPos.x - ec2Pos.x + ec2Pos.w * (i + 1);
-        const y = servicePodsPos.y - ec2Pos.y;
+        const nodeBox = getElementBBox(node);
+        const x = moveTo.x - nodeBox.x + nodeBox.w * (index + 1);
+        const y = moveTo.y - nodeBox.y;
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
       .on("end", () => {
-        d3.select("[id=clust8]").node().appendChild(ec2[i]);
-        d3.select(ec2[i])
-          .select("image")
-          .attr(
-            "xlink:href",
-            "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png"
-          );
+        d3.select("[id=clust8]").node().appendChild(node);
+        d3.select(node).select(tag).attr(attr, value);
       })
       .on("start", function () {
-        if (i < ec2.length - 1) {
-          ec2Migration(i + 1);
+        if (index < nodes.length - 1) {
+          transformPosAndStyle(nodes, index + 1, moveTo, tag, attr, value);
         }
       });
   };
 
-  const expandk8sCluster = (i) => {
+  const expand = (element, size) => {
+    const elementBox = getElementBBox(element.node());
+
     const path = d3.path();
-    path.moveTo(workerNodePos.x, workerNodePos.y);
-    path.lineTo(workerNodePos.x + workerNodePos.w * (i - 1), workerNodePos.y);
+    path.moveTo(elementBox.x, elementBox.y);
+    path.lineTo(elementBox.x + elementBox.w * (size - 1), elementBox.y);
     path.lineTo(
-      workerNodePos.x + workerNodePos.w * (i - 1),
-      workerNodePos.y + workerNodePos.h
+      elementBox.x + elementBox.w * (size - 1),
+      elementBox.y + elementBox.h
     );
-    path.lineTo(workerNodePos.x, workerNodePos.y + workerNodePos.h);
+    path.lineTo(elementBox.x, elementBox.y + elementBox.h);
     path.closePath();
 
-    workerNode.attr("d", path);
+    element.attr("d", path);
   };
 
-  const removeSkyline = () => {
-    const skylineCluster = svg.selectAll("[id^=skyline]").nodes();
-
-    skylineCluster.forEach((child) => {
-      console.log(child);
-      d3.select(child)
+  const remove = (nodes) => {
+    nodes.forEach((node) => {
+      d3.select(node)
         .style("opacity", 1)
         .transition()
         .duration(2000)
         .delay(1000)
         .style("opacity", 0)
         .on("end", function () {
-          d3.select(child).remove();
+          d3.select(node).remove();
         });
     });
   };
 
   d3.select("[id=clust4]").on("click", function () {
-    expandk8sCluster(ec2.length);
-    ec2Migration(0);
+    const workerNode = d3.select("[id=clust8]").select("path");
+    const ec2 = svg.selectAll("[id^=ec2]").nodes();
+
+    expand(workerNode, ec2.length);
+
+    const servicePods = d3.select("#servicePods").node();
+    const servicePodsBox = getElementBBox(servicePods);
+    const newImageLink =
+      "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
+
+    transformPosAndStyle(
+      ec2,
+      0,
+      servicePodsBox,
+      "image",
+      "xlink:href",
+      newImageLink
+    );
   });
 
   d3.select("[id=skyline]").on("click", function () {
-    removeSkyline();
+    const skylineCluster = svg.selectAll("[id^=skyline]").nodes();
+    remove(skylineCluster);
   });
 });
