@@ -60,7 +60,11 @@ with Diagram("Hootsuite 2019", show=False, direction="TB", graph_attr=graph_attr
             k8sIngress = NLB("Ingress LB")
             traefikPods = Pod("Traefik")
         with Cluster(label="Worker Nodes"):
-            servicePods = Pod("100+ Microservices", id="servicePods")
+            servicePod1 = Pod("Service POD")
+            servicePods = Pod("Service POD")
+            servicePods = Pod("Service POD")
+            servicePods = Pod("Service POD")
+            servicePods = Pod("More service pods... ", id="servicePods")
 
     with Cluster("Data Storage"):
         rds = RDS("RDS")

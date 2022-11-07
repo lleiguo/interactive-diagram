@@ -36,7 +36,7 @@
 </g>
 <g id="clust6" class="cluster">
 <title>cluster_Kubernetes Cluster</title>
-<path fill="#e5f5fd" stroke="#aeb6be" d="M588,-265C588,-265 698,-265 698,-265 704,-265 710,-271 710,-277 710,-277 710,-846 710,-846 710,-852 704,-858 698,-858 698,-858 588,-858 588,-858 582,-858 576,-852 576,-846 576,-846 576,-277 576,-277 576,-271 582,-265 588,-265"/>
+<path fill="#e5f5fd" stroke="#aeb6be" d="M588,-265C588,-265 1274,-265 1274,-265 1280,-265 1286,-271 1286,-277 1286,-277 1286,-846 1286,-846 1286,-852 1280,-858 1274,-858 1274,-858 588,-858 588,-858 582,-858 576,-852 576,-846 576,-846 576,-277 576,-277 576,-271 582,-265 588,-265"/>
 <text text-anchor="middle" x="635.5" y="-844.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Kubernetes Cluster</text>
 </g>
 <g id="clust7" class="cluster">
@@ -46,7 +46,7 @@
 </g>
 <g id="clust8" class="cluster">
 <title>cluster_Worker Nodes</title>
-<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-273C596,-273 690,-273 690,-273 696,-273 702,-279 702,-285 702,-285 702,-435 702,-435 702,-441 696,-447 690,-447 690,-447 596,-447 596,-447 590,-447 584,-441 584,-435 584,-435 584,-285 584,-285 584,-279 590,-273 596,-273"/>
+<path fill="#ebf3e7" stroke="#aeb6be" d="M596,-273C596,-273 1266,-273 1266,-273 1272,-273 1278,-279 1278,-285 1278,-285 1278,-435 1278,-435 1278,-441 1272,-447 1266,-447 1266,-447 596,-447 596,-447 590,-447 584,-441 584,-435 584,-435 584,-285 584,-285 584,-279 590,-273 596,-273"/>
 <text text-anchor="middle" x="630.5" y="-433.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">Worker Nodes</text>
 </g>
 <g id="clust9" class="cluster">
@@ -69,399 +69,423 @@
 <path fill="#ebf3e7" stroke="#aeb6be" d="M3044,-1057C3044,-1057 3282,-1057 3282,-1057 3288,-1057 3294,-1063 3294,-1069 3294,-1069 3294,-1219 3294,-1219 3294,-1225 3288,-1231 3282,-1231 3282,-1231 3044,-1231 3044,-1231 3038,-1231 3032,-1225 3032,-1219 3032,-1219 3032,-1069 3032,-1069 3032,-1063 3038,-1057 3044,-1057"/>
 <text text-anchor="middle" x="3103" y="-1217.4" font-family="Sans-Serif" font-size="12.00" fill="#2d3436">EC2 Classic aka Limbo</text>
 </g>
-<!-- e67a9f3113614329b860030cba8c6aee -->
+<!-- 918fb28ffb0d417ebde7acba36779eca -->
 <g id="node1" class="node">
-<title>e67a9f3113614329b860030cba8c6aee</title>
+<title>918fb28ffb0d417ebde7acba36779eca</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/network/route-53.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-1375"/>
 <text text-anchor="middle" x="499" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">dns</text>
 </g>
-<!-- d0356071e70c4a3fb45d1141f4950865 -->
+<!-- 1699631e183941018f326f0cddce43d9 -->
 <g id="node3" class="node">
-<title>d0356071e70c4a3fb45d1141f4950865</title>
+<title>1699631e183941018f326f0cddce43d9</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/network/elb-application-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-1184"/>
 <text text-anchor="middle" x="499" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Auth Facade ALB</text>
 </g>
-<!-- e67a9f3113614329b860030cba8c6aee&#45;&gt;d0356071e70c4a3fb45d1141f4950865 -->
+<!-- 918fb28ffb0d417ebde7acba36779eca&#45;&gt;1699631e183941018f326f0cddce43d9 -->
 <g id="edge25" class="edge">
-<title>e67a9f3113614329b860030cba8c6aee&#45;&gt;d0356071e70c4a3fb45d1141f4950865</title>
+<title>918fb28ffb0d417ebde7acba36779eca&#45;&gt;1699631e183941018f326f0cddce43d9</title>
 <path fill="none" stroke="#7b8894" d="M482.17,-1256.08C482.17,-1256.08 482.17,-1213.27 482.17,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="485.67,-1213.27 482.17,-1203.27 478.67,-1213.27 485.67,-1213.27"/>
 </g>
-<!-- 3a635e0a98aa4fc48e06975ef660e928 -->
+<!-- 29d6bc6723fa42b4b930cf00d006d98e -->
 <g id="apertureNLB" class="node">
-<title>3a635e0a98aa4fc48e06975ef660e928</title>
+<title>29d6bc6723fa42b4b930cf00d006d98e</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/network/elb-network-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-1184"/>
 <text text-anchor="middle" x="643" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture NLB</text>
 </g>
-<!-- e67a9f3113614329b860030cba8c6aee&#45;&gt;3a635e0a98aa4fc48e06975ef660e928 -->
+<!-- 918fb28ffb0d417ebde7acba36779eca&#45;&gt;29d6bc6723fa42b4b930cf00d006d98e -->
 <g id="edge22" class="edge">
-<title>e67a9f3113614329b860030cba8c6aee&#45;&gt;3a635e0a98aa4fc48e06975ef660e928</title>
+<title>918fb28ffb0d417ebde7acba36779eca&#45;&gt;29d6bc6723fa42b4b930cf00d006d98e</title>
 <path fill="none" stroke="#7b8894" d="M515.83,-1256.26C515.83,-1236.43 515.83,-1220 515.83,-1220 515.83,-1220 626.17,-1220 626.17,-1220 626.17,-1220 626.17,-1213.17 626.17,-1213.17"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="629.67,-1213.17 626.17,-1203.17 622.67,-1213.17 629.67,-1213.17"/>
 </g>
-<!-- 4939452a0246400a8ac20089055fecee -->
+<!-- a4f2bbde86914023be080b135a0c7428 -->
 <g id="node2" class="node">
-<title>4939452a0246400a8ac20089055fecee</title>
+<title>a4f2bbde86914023be080b135a0c7428</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/application-auto-scaling.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-993"/>
 <text text-anchor="middle" x="499" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Auth Facade</text>
 </g>
-<!-- ba8a65cf3ad448e4b6d0cccb30694e54 -->
+<!-- 7ae05844d3654dada07ffeeebc2aa6a5 -->
 <g id="node25" class="node">
-<title>ba8a65cf3ad448e4b6d0cccb30694e54</title>
+<title>7ae05844d3654dada07ffeeebc2aa6a5</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/network/elb-network-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-782"/>
 <text text-anchor="middle" x="643" y="-666.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Ingress LB</text>
 </g>
-<!-- 4939452a0246400a8ac20089055fecee&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54 -->
+<!-- a4f2bbde86914023be080b135a0c7428&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5 -->
 <g id="edge27" class="edge">
-<title>4939452a0246400a8ac20089055fecee&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54</title>
+<title>a4f2bbde86914023be080b135a0c7428&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5</title>
 <path fill="none" stroke="#7b8894" d="M499,-874.12C499,-812.33 499,-731 499,-731 499,-731 581.12,-731 581.12,-731"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="581.12,-734.5 591.12,-731 581.12,-727.5 581.12,-734.5"/>
 </g>
-<!-- d0356071e70c4a3fb45d1141f4950865&#45;&gt;4939452a0246400a8ac20089055fecee -->
+<!-- 1699631e183941018f326f0cddce43d9&#45;&gt;a4f2bbde86914023be080b135a0c7428 -->
 <g id="edge26" class="edge">
-<title>d0356071e70c4a3fb45d1141f4950865&#45;&gt;4939452a0246400a8ac20089055fecee</title>
+<title>1699631e183941018f326f0cddce43d9&#45;&gt;a4f2bbde86914023be080b135a0c7428</title>
 <path fill="none" stroke="#7b8894" d="M499,-1065.08C499,-1065.08 499,-1022.27 499,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="502.5,-1022.27 499,-1012.27 495.5,-1022.27 502.5,-1022.27"/>
 </g>
-<!-- 82deabda3b03436fa929dea5b180ec53 -->
+<!-- 2b170cd75f9b4ae096e6dfb824dce8ca -->
 <g id="traefik" class="node">
-<title>82deabda3b03436fa929dea5b180ec53</title>
+<title>2b170cd75f9b4ae096e6dfb824dce8ca</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/application-auto-scaling.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-993"/>
 <text text-anchor="middle" x="643" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture Traefik</text>
 </g>
-<!-- 3a635e0a98aa4fc48e06975ef660e928&#45;&gt;82deabda3b03436fa929dea5b180ec53 -->
+<!-- 29d6bc6723fa42b4b930cf00d006d98e&#45;&gt;2b170cd75f9b4ae096e6dfb824dce8ca -->
 <g id="edge23" class="edge">
-<title>3a635e0a98aa4fc48e06975ef660e928&#45;&gt;82deabda3b03436fa929dea5b180ec53</title>
+<title>29d6bc6723fa42b4b930cf00d006d98e&#45;&gt;2b170cd75f9b4ae096e6dfb824dce8ca</title>
 <path fill="none" stroke="#7b8894" d="M643,-1065.08C643,-1065.08 643,-1022.27 643,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-1022.27 643,-1012.27 639.5,-1022.27 646.5,-1022.27"/>
 </g>
-<!-- 82deabda3b03436fa929dea5b180ec53&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54 -->
+<!-- 2b170cd75f9b4ae096e6dfb824dce8ca&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5 -->
 <g id="edge24" class="edge">
-<title>82deabda3b03436fa929dea5b180ec53&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54</title>
+<title>2b170cd75f9b4ae096e6dfb824dce8ca&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5</title>
 <path fill="none" stroke="#7b8894" d="M643,-874.29C643,-874.29 643,-811.35 643,-811.35"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-811.35 643,-801.35 639.5,-811.35 646.5,-811.35"/>
 </g>
-<!-- 916db0842a84424ca07f13a52efa9cf0 -->
+<!-- 30cf1af36f9c4bd3938ba61f5ea1911b -->
 <g id="ec2&#45;Dashboard&#45;Web" class="node">
-<title>916db0842a84424ca07f13a52efa9cf0</title>
+<title>30cf1af36f9c4bd3938ba61f5ea1911b</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2896.5" y="-1375"/>
 <text text-anchor="middle" x="2947" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Web</text>
 </g>
-<!-- a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 8a9363c9b361499e8c764cce570676e1 -->
 <g id="skylineLB" class="node">
-<title>a6c81ffe2ac9433085282977465dbc60</title>
+<title>8a9363c9b361499e8c764cce570676e1</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/network/elb-application-load-balancer.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1672.5" y="-1184"/>
 <text text-anchor="middle" x="1723" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Skyline ALB</text>
 </g>
-<!-- 916db0842a84424ca07f13a52efa9cf0&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 30cf1af36f9c4bd3938ba61f5ea1911b&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge3" class="edge">
-<title>916db0842a84424ca07f13a52efa9cf0&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>30cf1af36f9c4bd3938ba61f5ea1911b&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2947,-1256.07C2947,-1183.74 2947,-1080 2947,-1080 2947,-1080 1784.78,-1080 1784.78,-1080"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.78,-1076.5 1774.78,-1080 1784.78,-1083.5 1784.78,-1076.5"/>
 </g>
-<!-- b5220762730d40cc85f562268397783e -->
+<!-- de74c881d4b44c3ab079fbacf931bddf -->
 <g id="ec2&#45;Dashboard&#45;Gear" class="node">
-<title>b5220762730d40cc85f562268397783e</title>
+<title>de74c881d4b44c3ab079fbacf931bddf</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2752.5" y="-1375"/>
 <text text-anchor="middle" x="2803" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Gear</text>
 </g>
-<!-- b5220762730d40cc85f562268397783e&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- de74c881d4b44c3ab079fbacf931bddf&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge4" class="edge">
-<title>b5220762730d40cc85f562268397783e&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>de74c881d4b44c3ab079fbacf931bddf&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2803,-1256.26C2803,-1188.61 2803,-1095 2803,-1095 2803,-1095 1784.8,-1095 1784.8,-1095"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.8,-1091.5 1774.8,-1095 1784.8,-1098.5 1784.8,-1091.5"/>
 </g>
-<!-- 29be097340f54cac8b223d5177a92268 -->
+<!-- 62618333f6ed45a28916b36a1a527bef -->
 <g id="ec2&#45;Dashboard&#45;Cron" class="node">
-<title>29be097340f54cac8b223d5177a92268</title>
+<title>62618333f6ed45a28916b36a1a527bef</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2608.5" y="-1375"/>
 <text text-anchor="middle" x="2659" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Dashboard&#45;Cron</text>
 </g>
-<!-- 29be097340f54cac8b223d5177a92268&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 62618333f6ed45a28916b36a1a527bef&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge5" class="edge">
-<title>29be097340f54cac8b223d5177a92268&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>62618333f6ed45a28916b36a1a527bef&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2659,-1256.04C2659,-1193.27 2659,-1110 2659,-1110 2659,-1110 1784.84,-1110 1784.84,-1110"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.84,-1106.5 1774.84,-1110 1784.84,-1113.5 1784.84,-1106.5"/>
 </g>
-<!-- d043f02ba5a2441ca9b21521ccdb99d7 -->
+<!-- 255da066e0624619a7c2e15f5990de07 -->
 <g id="ec2&#45;Member" class="node">
-<title>d043f02ba5a2441ca9b21521ccdb99d7</title>
+<title>255da066e0624619a7c2e15f5990de07</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2464.5" y="-1375"/>
 <text text-anchor="middle" x="2515" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Member</text>
 </g>
-<!-- d043f02ba5a2441ca9b21521ccdb99d7&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 255da066e0624619a7c2e15f5990de07&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge6" class="edge">
-<title>d043f02ba5a2441ca9b21521ccdb99d7&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>255da066e0624619a7c2e15f5990de07&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2515,-1256.12C2515,-1198.37 2515,-1125 2515,-1125 2515,-1125 1784.96,-1125 1784.96,-1125"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.96,-1121.5 1774.96,-1125 1784.96,-1128.5 1784.96,-1121.5"/>
 </g>
-<!-- 077c958d27fd4208955b15435b70a7c8 -->
+<!-- bcbdc97cad584803ad23e6e7df952917 -->
 <g id="ec2&#45;SCUM" class="node">
-<title>077c958d27fd4208955b15435b70a7c8</title>
+<title>bcbdc97cad584803ad23e6e7df952917</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2320.5" y="-1375"/>
 <text text-anchor="middle" x="2371" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">SCUM</text>
 </g>
-<!-- 077c958d27fd4208955b15435b70a7c8&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- bcbdc97cad584803ad23e6e7df952917&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge7" class="edge">
-<title>077c958d27fd4208955b15435b70a7c8&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>bcbdc97cad584803ad23e6e7df952917&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2371,-1256.17C2371,-1204 2371,-1141 2371,-1141 2371,-1141 1784.82,-1141 1784.82,-1141"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.82,-1137.5 1774.82,-1141 1784.82,-1144.5 1784.82,-1137.5"/>
 </g>
-<!-- 1d90413e6e854b49a0156f4dc5dda7b8 -->
+<!-- 2da69761034f472e8cebef0c32ed4b64 -->
 <g id="ec2&#45;Billing" class="node">
-<title>1d90413e6e854b49a0156f4dc5dda7b8</title>
+<title>2da69761034f472e8cebef0c32ed4b64</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2176.5" y="-1375"/>
 <text text-anchor="middle" x="2227" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Billing</text>
 </g>
-<!-- 1d90413e6e854b49a0156f4dc5dda7b8&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 2da69761034f472e8cebef0c32ed4b64&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge8" class="edge">
-<title>1d90413e6e854b49a0156f4dc5dda7b8&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>2da69761034f472e8cebef0c32ed4b64&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2227,-1256.45C2227,-1209.69 2227,-1156 2227,-1156 2227,-1156 1784.68,-1156 1784.68,-1156"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.68,-1152.5 1774.68,-1156 1784.68,-1159.5 1784.68,-1152.5"/>
 </g>
-<!-- 90ed18c061304e4ca768aa6fd5e00093 -->
+<!-- b09aea4344e446838aaa1c7a705bae3a -->
 <g id="ec2&#45;Message Achieve" class="node">
-<title>90ed18c061304e4ca768aa6fd5e00093</title>
+<title>b09aea4344e446838aaa1c7a705bae3a</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="2032.5" y="-1375"/>
 <text text-anchor="middle" x="2083" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Message Achieve</text>
 </g>
-<!-- 90ed18c061304e4ca768aa6fd5e00093&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- b09aea4344e446838aaa1c7a705bae3a&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge9" class="edge">
-<title>90ed18c061304e4ca768aa6fd5e00093&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>b09aea4344e446838aaa1c7a705bae3a&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M2083,-1256.28C2083,-1215.28 2083,-1171 2083,-1171 2083,-1171 1784.95,-1171 1784.95,-1171"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.95,-1167.5 1774.95,-1171 1784.95,-1174.5 1784.95,-1167.5"/>
 </g>
-<!-- 9d5e2c5864d24806b36b07faf9310feb -->
+<!-- 9c0239bb65394873a4ebbc1fef78b271 -->
 <g id="ec2&#45;Message Review" class="node">
-<title>9d5e2c5864d24806b36b07faf9310feb</title>
+<title>9c0239bb65394873a4ebbc1fef78b271</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1888.5" y="-1375"/>
 <text text-anchor="middle" x="1939" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Message Review</text>
 </g>
-<!-- 9d5e2c5864d24806b36b07faf9310feb&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 9c0239bb65394873a4ebbc1fef78b271&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge10" class="edge">
-<title>9d5e2c5864d24806b36b07faf9310feb&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>9c0239bb65394873a4ebbc1fef78b271&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1939,-1256.06C1939,-1221.17 1939,-1186 1939,-1186 1939,-1186 1784.88,-1186 1784.88,-1186"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1784.88,-1182.5 1774.88,-1186 1784.88,-1189.5 1784.88,-1182.5"/>
 </g>
-<!-- d50abfdbbd9e4c8b9e57ad95b4a54e88 -->
+<!-- 25f1ac4e48024d4da3b7d5a7de2279c2 -->
 <g id="ec2&#45;Scheduled Data" class="node">
-<title>d50abfdbbd9e4c8b9e57ad95b4a54e88</title>
+<title>25f1ac4e48024d4da3b7d5a7de2279c2</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1744.5" y="-1375"/>
 <text text-anchor="middle" x="1795" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Scheduled Data</text>
 </g>
-<!-- d50abfdbbd9e4c8b9e57ad95b4a54e88&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 25f1ac4e48024d4da3b7d5a7de2279c2&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge11" class="edge">
-<title>d50abfdbbd9e4c8b9e57ad95b4a54e88&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>25f1ac4e48024d4da3b7d5a7de2279c2&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1759,-1256.08C1759,-1256.08 1759,-1213.27 1759,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1762.5,-1213.27 1759,-1203.27 1755.5,-1213.27 1762.5,-1213.27"/>
 </g>
-<!-- b813ac66ca0d4c1ca473e49748eb8392 -->
+<!-- edccef6ac4374c258fc0c1564736de7c -->
 <g id="ec2&#45;Core" class="node">
-<title>b813ac66ca0d4c1ca473e49748eb8392</title>
+<title>edccef6ac4374c258fc0c1564736de7c</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1600.5" y="-1375"/>
 <text text-anchor="middle" x="1651" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Core</text>
 </g>
-<!-- b813ac66ca0d4c1ca473e49748eb8392&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- edccef6ac4374c258fc0c1564736de7c&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge12" class="edge">
-<title>b813ac66ca0d4c1ca473e49748eb8392&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>edccef6ac4374c258fc0c1564736de7c&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1691.83,-1256.08C1691.83,-1256.08 1691.83,-1213.27 1691.83,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1695.33,-1213.27 1691.83,-1203.27 1688.33,-1213.27 1695.33,-1213.27"/>
 </g>
-<!-- 51b98c9c350f4c90a4367dc5de0ceac9 -->
+<!-- 3c905dbad1614ad2a4303b6ca8770b73 -->
 <g id="ec2&#45;TOPS" class="node">
-<title>51b98c9c350f4c90a4367dc5de0ceac9</title>
+<title>3c905dbad1614ad2a4303b6ca8770b73</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1456.5" y="-1375"/>
 <text text-anchor="middle" x="1507" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">TOPS</text>
 </g>
-<!-- 51b98c9c350f4c90a4367dc5de0ceac9&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 3c905dbad1614ad2a4303b6ca8770b73&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge13" class="edge">
-<title>51b98c9c350f4c90a4367dc5de0ceac9&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>3c905dbad1614ad2a4303b6ca8770b73&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1507,-1256.17C1507,-1219.6 1507,-1182 1507,-1182 1507,-1182 1661.12,-1182 1661.12,-1182"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.12,-1185.5 1671.12,-1182 1661.12,-1178.5 1661.12,-1185.5"/>
 </g>
-<!-- 3914d87395fa4c7899c3e64d8455030f -->
+<!-- 96e3c85a3b624f728a4ab3cc2d3b3d4b -->
 <g id="ec2&#45;GSS" class="node">
-<title>3914d87395fa4c7899c3e64d8455030f</title>
+<title>96e3c85a3b624f728a4ab3cc2d3b3d4b</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1312.5" y="-1375"/>
 <text text-anchor="middle" x="1363" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">GSS</text>
 </g>
-<!-- 3914d87395fa4c7899c3e64d8455030f&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 96e3c85a3b624f728a4ab3cc2d3b3d4b&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge14" class="edge">
-<title>3914d87395fa4c7899c3e64d8455030f&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>96e3c85a3b624f728a4ab3cc2d3b3d4b&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1363,-1256.06C1363,-1211.65 1363,-1162 1363,-1162 1363,-1162 1661.05,-1162 1661.05,-1162"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.05,-1165.5 1671.05,-1162 1661.05,-1158.5 1661.05,-1165.5"/>
 </g>
-<!-- 67d115751f554bba916583fb441e3cbd -->
+<!-- fcb3089f855a40349fcd441160d3fbd2 -->
 <g id="ec2&#45;HootSupport" class="node">
-<title>67d115751f554bba916583fb441e3cbd</title>
+<title>fcb3089f855a40349fcd441160d3fbd2</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1168.5" y="-1375"/>
 <text text-anchor="middle" x="1219" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">HootSupport</text>
 </g>
-<!-- 67d115751f554bba916583fb441e3cbd&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- fcb3089f855a40349fcd441160d3fbd2&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge15" class="edge">
-<title>67d115751f554bba916583fb441e3cbd&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>fcb3089f855a40349fcd441160d3fbd2&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1219,-1256.14C1219,-1204.69 1219,-1143 1219,-1143 1219,-1143 1661.32,-1143 1661.32,-1143"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.32,-1146.5 1671.32,-1143 1661.32,-1139.5 1661.32,-1146.5"/>
 </g>
-<!-- 63b3c97fcc754b00bf3905d564a9be16 -->
+<!-- 131c01017d52428f999b9d76992e976b -->
 <g id="ec2&#45;Push Notifications" class="node">
-<title>63b3c97fcc754b00bf3905d564a9be16</title>
+<title>131c01017d52428f999b9d76992e976b</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1024.5" y="-1375"/>
 <text text-anchor="middle" x="1075" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Push Notifications</text>
 </g>
-<!-- 63b3c97fcc754b00bf3905d564a9be16&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 131c01017d52428f999b9d76992e976b&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge16" class="edge">
-<title>63b3c97fcc754b00bf3905d564a9be16&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>131c01017d52428f999b9d76992e976b&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M1075,-1256C1075,-1197.58 1075,-1123 1075,-1123 1075,-1123 1661.18,-1123 1661.18,-1123"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.18,-1126.5 1671.18,-1123 1661.18,-1119.5 1661.18,-1126.5"/>
 </g>
-<!-- ed50caf60eab4b56ae19e52412c75533 -->
+<!-- 67e7458fa3e04da0b4413b42bebee259 -->
 <g id="ec2&#45;Crypto" class="node">
-<title>ed50caf60eab4b56ae19e52412c75533</title>
+<title>67e7458fa3e04da0b4413b42bebee259</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="880.5" y="-1375"/>
 <text text-anchor="middle" x="931" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Crypto</text>
 </g>
-<!-- ed50caf60eab4b56ae19e52412c75533&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 67e7458fa3e04da0b4413b42bebee259&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge17" class="edge">
-<title>ed50caf60eab4b56ae19e52412c75533&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>67e7458fa3e04da0b4413b42bebee259&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M931,-1256.24C931,-1191.48 931,-1104 931,-1104 931,-1104 1661.04,-1104 1661.04,-1104"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.04,-1107.5 1671.04,-1104 1661.04,-1100.5 1661.04,-1107.5"/>
 </g>
-<!-- 21493fc544394c2da810f944817add6b -->
+<!-- 7e7326af69fe4dc3add864e256903f20 -->
 <g id="ec2&#45;Aperture Authz" class="node">
-<title>21493fc544394c2da810f944817add6b</title>
+<title>7e7326af69fe4dc3add864e256903f20</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="736.5" y="-1375"/>
 <text text-anchor="middle" x="787" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aperture Authz</text>
 </g>
-<!-- 21493fc544394c2da810f944817add6b&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- 7e7326af69fe4dc3add864e256903f20&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge18" class="edge">
-<title>21493fc544394c2da810f944817add6b&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>7e7326af69fe4dc3add864e256903f20&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M787,-1256.23C787,-1185.12 787,-1084 787,-1084 787,-1084 1661.16,-1084 1661.16,-1084"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1661.16,-1087.5 1671.16,-1084 1661.16,-1080.5 1661.16,-1087.5"/>
 </g>
-<!-- 33979b47ef3745e19e991ce558bec088 -->
+<!-- af36fc93ce304efca570646240cbce95 -->
 <g id="ec2&#45;Amplify" class="node">
-<title>33979b47ef3745e19e991ce558bec088</title>
+<title>af36fc93ce304efca570646240cbce95</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-1375"/>
 <text text-anchor="middle" x="643" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Amplify</text>
 </g>
-<!-- 33979b47ef3745e19e991ce558bec088&#45;&gt;a6c81ffe2ac9433085282977465dbc60 -->
+<!-- af36fc93ce304efca570646240cbce95&#45;&gt;8a9363c9b361499e8c764cce570676e1 -->
 <g id="edge19" class="edge">
-<title>33979b47ef3745e19e991ce558bec088&#45;&gt;a6c81ffe2ac9433085282977465dbc60</title>
+<title>af36fc93ce304efca570646240cbce95&#45;&gt;8a9363c9b361499e8c764cce570676e1</title>
 <path fill="none" stroke="#7b8894" d="M659.83,-1256.34C659.83,-1245.62 659.83,-1238 659.83,-1238 659.83,-1238 1682.17,-1238 1682.17,-1238 1682.17,-1238 1682.17,-1213.26 1682.17,-1213.26"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1685.67,-1213.26 1682.17,-1203.26 1678.67,-1213.26 1685.67,-1213.26"/>
 </g>
-<!-- 19063f83460c467d85034997a4f68554 -->
+<!-- 340558c856d04bb68608df1b0e56976b -->
 <g id="skylineBridge" class="node">
-<title>19063f83460c467d85034997a4f68554</title>
+<title>340558c856d04bb68608df1b0e56976b</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/compute/ec2.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1672.5" y="-993"/>
 <text text-anchor="middle" x="1723" y="-877.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Skyline Bridge</text>
 </g>
-<!-- a6c81ffe2ac9433085282977465dbc60&#45;&gt;19063f83460c467d85034997a4f68554 -->
+<!-- 8a9363c9b361499e8c764cce570676e1&#45;&gt;340558c856d04bb68608df1b0e56976b -->
 <g id="edge20" class="edge">
-<title>a6c81ffe2ac9433085282977465dbc60&#45;&gt;19063f83460c467d85034997a4f68554</title>
+<title>8a9363c9b361499e8c764cce570676e1&#45;&gt;340558c856d04bb68608df1b0e56976b</title>
 <path fill="none" stroke="#7b8894" d="M1723,-1065.08C1723,-1065.08 1723,-1022.27 1723,-1022.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="1726.5,-1022.27 1723,-1012.27 1719.5,-1022.27 1726.5,-1022.27"/>
 </g>
-<!-- 19063f83460c467d85034997a4f68554&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54 -->
+<!-- 340558c856d04bb68608df1b0e56976b&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5 -->
 <g id="edge21" class="edge">
-<title>19063f83460c467d85034997a4f68554&#45;&gt;ba8a65cf3ad448e4b6d0cccb30694e54</title>
+<title>340558c856d04bb68608df1b0e56976b&#45;&gt;7ae05844d3654dada07ffeeebc2aa6a5</title>
 <path fill="none" stroke="#7b8894" d="M1723,-874.12C1723,-812.33 1723,-731 1723,-731 1723,-731 704.8,-731 704.8,-731"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="704.8,-727.5 694.8,-731 704.8,-734.5 704.8,-727.5"/>
 </g>
-<!-- 6b1589b5662e4b11abccc18c4a94674a -->
+<!-- ce7808b182d246d4b2eb988a66dbefff -->
 <g id="node26" class="node">
-<title>6b1589b5662e4b11abccc18c4a94674a</title>
+<title>ce7808b182d246d4b2eb988a66dbefff</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-591"/>
 <text text-anchor="middle" x="643" y="-475.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Traefik</text>
 </g>
-<!-- ba8a65cf3ad448e4b6d0cccb30694e54&#45;&gt;6b1589b5662e4b11abccc18c4a94674a -->
+<!-- 7ae05844d3654dada07ffeeebc2aa6a5&#45;&gt;ce7808b182d246d4b2eb988a66dbefff -->
 <g id="edge28" class="edge">
-<title>ba8a65cf3ad448e4b6d0cccb30694e54&#45;&gt;6b1589b5662e4b11abccc18c4a94674a</title>
+<title>7ae05844d3654dada07ffeeebc2aa6a5&#45;&gt;ce7808b182d246d4b2eb988a66dbefff</title>
 <path fill="none" stroke="#7b8894" d="M643,-663.08C643,-663.08 643,-620.27 643,-620.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-620.27 643,-610.27 639.5,-620.27 646.5,-620.27"/>
 </g>
-<!-- ced415e3b23c4c32991b05446c5f4452 -->
+<!-- 54322a24c7264cbc899aacfd7a023b92 -->
 <g id="servicePods" class="node">
-<title>ced415e3b23c4c32991b05446c5f4452</title>
+<title>54322a24c7264cbc899aacfd7a023b92</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-400"/>
-<text text-anchor="middle" x="643" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">100+ Microservices</text>
+<text text-anchor="middle" x="643" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">More service pods... </text>
 </g>
-<!-- 6b1589b5662e4b11abccc18c4a94674a&#45;&gt;ced415e3b23c4c32991b05446c5f4452 -->
+<!-- ce7808b182d246d4b2eb988a66dbefff&#45;&gt;54322a24c7264cbc899aacfd7a023b92 -->
 <g id="edge29" class="edge">
-<title>6b1589b5662e4b11abccc18c4a94674a&#45;&gt;ced415e3b23c4c32991b05446c5f4452</title>
+<title>ce7808b182d246d4b2eb988a66dbefff&#45;&gt;54322a24c7264cbc899aacfd7a023b92</title>
 <path fill="none" stroke="#7b8894" d="M643,-472.08C643,-472.08 643,-429.27 643,-429.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-429.27 643,-419.27 639.5,-429.27 646.5,-429.27"/>
 </g>
-<!-- bd2e79fa7efc4573a126270025dcaf91 -->
+<!-- 073fb21bf61041aeb7d24303e6027ca7 -->
+<g id="node27" class="node">
+<title>073fb21bf61041aeb7d24303e6027ca7</title>
+<image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1168.5" y="-400"/>
+<text text-anchor="middle" x="1219" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Service POD</text>
+</g>
+<!-- 0df5b22d47334f818e3a416d800d29d6 -->
 <g id="node28" class="node">
-<title>bd2e79fa7efc4573a126270025dcaf91</title>
+<title>0df5b22d47334f818e3a416d800d29d6</title>
+<image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="1024.5" y="-400"/>
+<text text-anchor="middle" x="1075" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Service POD</text>
+</g>
+<!-- dc5834f01a074062bb2105a29593a9c8 -->
+<g id="node29" class="node">
+<title>dc5834f01a074062bb2105a29593a9c8</title>
+<image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="880.5" y="-400"/>
+<text text-anchor="middle" x="931" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Service POD</text>
+</g>
+<!-- 5bcd6a6fd0274447845941d65cd26c97 -->
+<g id="node30" class="node">
+<title>5bcd6a6fd0274447845941d65cd26c97</title>
+<image xlink:href="/usr/local/lib/python3.10/site-packages/resources/k8s/compute/pod.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="736.5" y="-400"/>
+<text text-anchor="middle" x="787" y="-284.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Service POD</text>
+</g>
+<!-- 205b63ad945c42bb97d773f999112d32 -->
+<g id="node32" class="node">
+<title>205b63ad945c42bb97d773f999112d32</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/database/rds.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="592.5" y="-209"/>
 <text text-anchor="middle" x="643" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">RDS</text>
 </g>
-<!-- ced415e3b23c4c32991b05446c5f4452&#45;&gt;bd2e79fa7efc4573a126270025dcaf91 -->
+<!-- 54322a24c7264cbc899aacfd7a023b92&#45;&gt;205b63ad945c42bb97d773f999112d32 -->
 <g id="edge30" class="edge">
-<title>ced415e3b23c4c32991b05446c5f4452&#45;&gt;bd2e79fa7efc4573a126270025dcaf91</title>
+<title>54322a24c7264cbc899aacfd7a023b92&#45;&gt;205b63ad945c42bb97d773f999112d32</title>
 <path fill="none" stroke="#7b8894" d="M643,-281.08C643,-281.08 643,-238.27 643,-238.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="646.5,-238.27 643,-228.27 639.5,-238.27 646.5,-238.27"/>
 </g>
-<!-- 45dd8e3c2aa14e2080cb3f2dd2c6d858 -->
-<g id="node29" class="node">
-<title>45dd8e3c2aa14e2080cb3f2dd2c6d858</title>
+<!-- 12e67210341341569f90f1e8141febc2 -->
+<g id="node33" class="node">
+<title>12e67210341341569f90f1e8141febc2</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/database/aurora.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="448.5" y="-209"/>
 <text text-anchor="middle" x="499" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Aurora</text>
 </g>
-<!-- 52e298233ebe4469a36bf0fe206ad717 -->
-<g id="node30" class="node">
-<title>52e298233ebe4469a36bf0fe206ad717</title>
+<!-- f07ed47c333247e8bee4ebdd285714e9 -->
+<g id="node34" class="node">
+<title>f07ed47c333247e8bee4ebdd285714e9</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/database/elasticache-for-memcached.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="304.5" y="-209"/>
 <text text-anchor="middle" x="355" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Memcached</text>
 </g>
-<!-- 6a505f7d2a814401af6cb47e7ab0551d -->
-<g id="node31" class="node">
-<title>6a505f7d2a814401af6cb47e7ab0551d</title>
+<!-- b656fd260adf43029b48e0d07361320d -->
+<g id="node35" class="node">
+<title>b656fd260adf43029b48e0d07361320d</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/database/elasticache-for-redis.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="160.5" y="-209"/>
 <text text-anchor="middle" x="211" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Redis</text>
 </g>
-<!-- df78fb08e31c4e44affed8694eb68df6 -->
-<g id="node32" class="node">
-<title>df78fb08e31c4e44affed8694eb68df6</title>
+<!-- 662857de16e249968e0308551809ff8f -->
+<g id="node36" class="node">
+<title>662857de16e249968e0308551809ff8f</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/aws/storage/simple-storage-service-s3.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="16.5" y="-209"/>
 <text text-anchor="middle" x="67" y="-93.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">S3</text>
 </g>
-<!-- de0cce610bd54d42b3436073b679b679 -->
+<!-- 046e826ba8c44644b66ecf832f043b03 -->
 <g id="VPC Local" class="node">
-<title>de0cce610bd54d42b3436073b679b679</title>
+<title>046e826ba8c44644b66ecf832f043b03</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3184.5" y="-1375"/>
 <text text-anchor="middle" x="3235" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">VPC Local</text>
 </g>
-<!-- 6721bb02b0f9467cb171d4d4f1818dbb -->
+<!-- a4b3507b7757479aaafa8c597378774f -->
 <g id="Limbo Aggregate" class="node">
-<title>6721bb02b0f9467cb171d4d4f1818dbb</title>
+<title>a4b3507b7757479aaafa8c597378774f</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3184.5" y="-1184"/>
 <text text-anchor="middle" x="3235" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Limbo Aggregate</text>
 </g>
-<!-- de0cce610bd54d42b3436073b679b679&#45;&gt;6721bb02b0f9467cb171d4d4f1818dbb -->
+<!-- 046e826ba8c44644b66ecf832f043b03&#45;&gt;a4b3507b7757479aaafa8c597378774f -->
 <g id="edge1" class="edge">
-<title>de0cce610bd54d42b3436073b679b679&#45;&gt;6721bb02b0f9467cb171d4d4f1818dbb</title>
+<title>046e826ba8c44644b66ecf832f043b03&#45;&gt;a4b3507b7757479aaafa8c597378774f</title>
 <path fill="none" stroke="#7b8894" d="M3235,-1256.08C3235,-1256.08 3235,-1213.27 3235,-1213.27"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="3238.5,-1213.27 3235,-1203.27 3231.5,-1213.27 3238.5,-1213.27"/>
 </g>
-<!-- 86e28a78c15f45a9a928ef7f0bcf7a8a -->
+<!-- a80f68d0dcc24e90bcc362e15995bc27 -->
 <g id="Limbo Local" class="node">
-<title>86e28a78c15f45a9a928ef7f0bcf7a8a</title>
+<title>a80f68d0dcc24e90bcc362e15995bc27</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3040.5" y="-1184"/>
 <text text-anchor="middle" x="3091" y="-1068.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">Limbo Local</text>
 </g>
-<!-- c3fe5a13864c454fb163d5153a6258af -->
+<!-- e5cd6d6a0c6746d79c58c35c544d44cd -->
 <g id="VPC Aggregate" class="node">
-<title>c3fe5a13864c454fb163d5153a6258af</title>
+<title>e5cd6d6a0c6746d79c58c35c544d44cd</title>
 <image xlink:href="/usr/local/lib/python3.10/site-packages/resources/onprem/queue/kafka.png" width="101px" height="101px" preserveAspectRatio="xMinYMin meet" x="3040.5" y="-1375"/>
 <text text-anchor="middle" x="3091" y="-1259.6" font-family="Sans-Serif" font-size="13.00" fill="#2d3436">VPC Aggregate</text>
 </g>
-<!-- 86e28a78c15f45a9a928ef7f0bcf7a8a&#45;&gt;c3fe5a13864c454fb163d5153a6258af -->
+<!-- a80f68d0dcc24e90bcc362e15995bc27&#45;&gt;e5cd6d6a0c6746d79c58c35c544d44cd -->
 <g id="edge2" class="edge">
-<title>86e28a78c15f45a9a928ef7f0bcf7a8a&#45;&gt;c3fe5a13864c454fb163d5153a6258af</title>
+<title>a80f68d0dcc24e90bcc362e15995bc27&#45;&gt;e5cd6d6a0c6746d79c58c35c544d44cd</title>
 <path fill="none" stroke="#7b8894" d="M3091,-1201.92C3091,-1201.92 3091,-1244.73 3091,-1244.73"/>
 <polygon fill="#7b8894" stroke="#7b8894" points="3087.5,-1244.73 3091,-1254.73 3094.5,-1244.73 3087.5,-1244.73"/>
 </g>
