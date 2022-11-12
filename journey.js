@@ -89,8 +89,6 @@ d3.xml(svgURL).then((data) => {
     const workerPath = workerCluster.select("path");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    expand(workerPath, ec2.length + 6);
-
     const servicePods = d3.select("#servicePods").node();
     const servicePodsBox = getElementBBox(servicePods);
     const newImageLink =
@@ -106,6 +104,7 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
+    expand(workerPath, ec2.length);
     remove(d3.selectAll("[id^=service_pod]").nodes());
   });
 
