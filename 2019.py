@@ -35,8 +35,8 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
             traefikPods = Pod("Traefik Pods", id="traefikPods")
         with Cluster(label="Worker Nodes", graph_attr={"id": "cluster_k8s_worker"}):
             servicePod = Pod("More service pods... ", id="servicePods")
-            servicePods = [Pod("Service POD"), Pod(
-                "Service POD"), Pod("Service POD"), Pod("Service POD")]
+            servicePods = [Pod("Service POD", id="service_pod"), Pod(
+                "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
         EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),

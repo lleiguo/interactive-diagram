@@ -29,7 +29,7 @@ d3.xml(svgURL).then((data) => {
   const svg = d3.select("svg");
 
   //transform a set of nodes to new location with new style
-  const transformPosAndStyle = (nodes, index, moveTo, tag, attr, value) => {
+  const transformPosAndStyle = (nodes, index, moveTo, parent, tag, attr, value) => {
     const node = nodes[index];
     d3.select(node)
       .transition()
@@ -41,12 +41,12 @@ d3.xml(svgURL).then((data) => {
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
       .on("end", () => {
-        d3.select("[id=clust8]").node().appendChild(node);
+        parent.node().appendChild(node);
         d3.select(node).select(tag).attr(attr, value);
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
-          transformPosAndStyle(nodes, index + 1, moveTo, tag, attr, value);
+          transformPosAndStyle(nodes, index + 1, moveTo, parent, tag, attr, value);
         }
       });
   };
@@ -85,11 +85,11 @@ d3.xml(svgURL).then((data) => {
 
   // EC2 migration animation
   d3.select("[id=cluster_ec2]").on("click", function () {
-    console.log("EC2 migration");
-    const workerNode = d3.select("[id=cluster_k8s_worker]").select("path");
+    const workerCluster = d3.select("[id=cluster_k8s_worker]");
+    const workerPath = workerCluster.select("path");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    expand(workerNode, ec2.length + 6);
+    expand(workerPath, ec2.length + 6);
 
     const servicePods = d3.select("#servicePods").node();
     const servicePodsBox = getElementBBox(servicePods);
@@ -100,20 +100,23 @@ d3.xml(svgURL).then((data) => {
       ec2,
       0,
       servicePodsBox,
+      workerCluster,
       "image",
       "xlink:href",
       newImageLink
     );
+
+    remove(d3.selectAll("[id^=service_pod]").nodes());
   });
 
   // Skyline deprecation animation
-  d3.select("[id=skyline]").on("click", function () {
+  d3.select("[id=cluster_skyline]").on("click", function () {
     const skylineCluster = svg.selectAll("[id^=skyline]").nodes();
     remove(skylineCluster);
   });
 
   // Consolidate Aperture
-  d3.select("[id=aperture]").on("click", function () {
+  d3.select("[id=cluster_aperture]").on("click", function () {
     const apertureCluster = svg.selectAll("[id^=aperture]").nodes();
     remove(apertureCluster);
   });
