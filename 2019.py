@@ -38,7 +38,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
             servicePods = [Pod("Service POD"), Pod(
                 "Service POD"), Pod("Service POD"), Pod("Service POD")]
 
-    with Cluster("EC2 Services", direction="LR", graph_attr={"id": "ec2"}):
+    with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
         EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
