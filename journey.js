@@ -62,7 +62,9 @@ d3.xml(svgURL).then((data) => {
       elementBox.x + elementBox.w * (times - 1),
       elementBox.y + elementBox.h
     );
-    path.lineTo(elementBox.x, elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
     path.closePath();
 
     element.attr("d", path);
@@ -105,7 +107,7 @@ d3.xml(svgURL).then((data) => {
     );
 
     expand(workerPath, ec2.length);
-    remove(d3.selectAll("[id^=service_pod]").nodes());
+    remove(d3.selectAll("[id=service_pod]").nodes());
   });
 
   // Skyline deprecation animation

@@ -84,7 +84,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    EC2Services >> skylineLB >> skylineBridge >> k8sIngress
+    EC2Services >> Edge(node=skylineLB, label="EC2") >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
     dns >> authFacadeALB >> authFacade >> k8sIngress, EC2Services
     servicePod >> Edge(color="black", style="dashed",
