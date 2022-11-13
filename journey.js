@@ -117,7 +117,7 @@ d3.xml(svgURL).then((data) => {
     const skylineCluster = svg.selectAll("[id*=skyline]").nodes();
     remove(skylineCluster);
     // move(d3.select("[id=cluster_edge]"), 0, -100);
-    const nodes = d3.select("[id*=cluster_edge]").selectAll("g").nodes();
+    const nodes = d3.select("[id*=cluster_edge]").nodes();
     console.log(nodes);
     nodes.forEach((node) => {
       d3.select(node)
