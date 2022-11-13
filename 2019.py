@@ -88,7 +88,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 # Path:
     apertureAuthzEC2 >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
-    dns >> authFacadeALB >> authFacade >> k8sIngress, EC2Services
+    dns >> authFacadeALB >> authFacade >> k8sIngress, apertureAuthzEC2
     servicePod >> Edge(color="black", style="dashed",
                        node=vpcLocal, forward=True, reverse=True) << kafka
     k8sIngress >> traefikPods >> Edge(
@@ -96,4 +96,4 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
     servicePod >> Edge(color="black", style="dashed",
                        node=servicePod, forward=True, reverse=True) << datastore
     traefik >> Edge(color="black", style="dashed", node=traefik,
-                    forward=True, reverse=True) << EC2Services
+                    forward=True, reverse=True) << apertureAuthzEC2
