@@ -41,8 +41,8 @@ d3.xml(svgURL).then((data) => {
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
       .on("end", () => {
-        parent.node().appendChild(node);
         d3.select(node).select(tag).attr(attr, value);
+        parent.node().appendChild(node);
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
@@ -62,9 +62,8 @@ d3.xml(svgURL).then((data) => {
       elementBox.x + elementBox.w * (times - 1),
       elementBox.y + elementBox.h
     );
-    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
-    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
-    path.lineTo(elementBox.x - elementBox.w * (times - 1), elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * 1.2 , elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * 1.2 , elementBox.y);
     path.closePath();
 
     element.attr("d", path);
@@ -88,7 +87,6 @@ d3.xml(svgURL).then((data) => {
   // EC2 migration animation
   d3.select("[id=cluster_ec2]").on("click", function () {
     const workerCluster = d3.select("[id=cluster_k8s_worker]");
-    const workerPath = workerCluster.select("path");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
     const servicePods = d3.select("#servicePods").node();
@@ -106,19 +104,22 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
-    expand(workerPath, ec2.length);
+    expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
+    expand(workerCluster.select("path"), ec2.length);
     remove(d3.selectAll("[id=service_pod]").nodes());
+    remove(d3.selectAll("[id=servicePods]").nodes());
+    console.log(d3.selectAll("[title*=16a605b1c90246c58411111566c7b6c4]"))
   });
 
   // Skyline deprecation animation
   d3.select("[id=cluster_skyline]").on("click", function () {
-    const skylineCluster = svg.selectAll("[id^=skyline]").nodes();
+    const skylineCluster = svg.selectAll("[id*=skyline]").nodes();
     remove(skylineCluster);
   });
 
   // Consolidate Aperture
   d3.select("[id=cluster_aperture]").on("click", function () {
-    const apertureCluster = svg.selectAll("[id^=aperture]").nodes();
+    const apertureCluster = svg.selectAll("[id*=aperture]").nodes();
     remove(apertureCluster);
   });
 });

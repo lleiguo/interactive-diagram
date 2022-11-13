@@ -40,6 +40,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
+        apertureAuthzEC2 = EC2("Aperture Authz", id="ec2-Aperture Authz")
         EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
@@ -55,7 +56,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                        EC2("HootSupport", id="ec2-HootSupport"),
                        EC2("Push Notifications", id="ec2-Push Notifications"),
                        EC2("Crypto", id="ec2-Crypto"),
-                       EC2("Aperture Authz", id="ec2-Aperture Authz"),
+                       apertureAuthzEC2,
                        EC2("Amplify", id="ec2-Amplify")]
 
     with Cluster("Skyline", graph_attr={"id": "cluster_skyline"}):
@@ -85,7 +86,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    EC2Services >> skylineLB >> skylineBridge >> k8sIngress
+    apertureAuthzEC2 >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress
     dns >> authFacadeALB >> authFacade >> k8sIngress, EC2Services
     servicePod >> Edge(color="black", style="dashed",
