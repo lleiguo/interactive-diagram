@@ -4,12 +4,11 @@ from diagrams import Diagram, Cluster, Edge
 
 from diagrams.aws.compute import EC2, AutoScaling
 from diagrams.aws.database import RDS, Aurora, ElasticacheForRedis, ElasticacheForMemcached
-from diagrams.aws.network import ELB, Route53, ALB, NLB
+from diagrams.aws.network import ELB, Route53, ALB, NLB, CloudFront
 from diagrams.aws.storage import S3
+from diagrams.aws.security import WAF
 
 from diagrams.k8s.compute import Pod
-from diagrams.generic.virtualization import Vmware
-from diagrams.onprem.network import Zookeeper
 from diagrams.onprem.queue import Kafka
 
 graph_attr = {
@@ -21,6 +20,8 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
     with Cluster(label="Edge", direction="TB", graph_attr={"id": "cluster_edge"}):
         dns = Route53("dns", id="cluster_edge_dns")
+        cdn = CloudFront("cdn", id="cluster_edge_cdn")
+        waf = WAF("waf", id="cluster_edge_waf")
 
         with Cluster("Auth Facade", graph_attr={"id": "cluster_edge_auth_facade"}):
             authFacade = AutoScaling("Auth Facade", id="cluster_edge_aperture")
@@ -32,22 +33,30 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
             traefik = AutoScaling("Aperture Traefik",
                                   id="cluster_edge_traefik")
 
+        with Cluster("Dashboard", graph_attr={"id": "cluster_edge_dashboard"}):
+            dashboardENLB = NLB("Dashboard External NLB",
+                                id="cluster_edge_dashboardENLB")
+            dashboardINLB = NLB("Dashboard Internal NLB",
+                                id="cluster_edge_dashboardENLB")
+            dashboardELB = NLB("Dashboard ELB", id="cluster_edge_dashboardELB")
+
     with Cluster("Kubernetes Cluster", graph_attr={"id": "cluster_k8s"}):
-        with Cluster("Ingress Nodes", graph_attr={"id": "cluster_k8s_ingress"}):
+        with Cluster("Ingress Auto Scaling Group", graph_attr={"id": "cluster_k8s_ingress"}):
             k8sIngress = NLB("Ingress LB")
             traefikPods = Pod("Traefik Pods", id="traefikPods")
-        with Cluster(label="Worker Nodes", graph_attr={"id": "cluster_k8s_worker"}):
-            servicePod = Pod("More service pods... ", id="servicePods")
+        with Cluster(label="Managed Worker Nodes Auto Scaling Group", graph_attr={"id": "cluster_k8s_worker"}):
+            servicePod = Pod("Service Pods... ", id="servicePods")
             servicePods = [Pod("Service POD", id="service_pod"), Pod(
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
-    with Cluster("EC2 Services", direction="LR"):
+    with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
         with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_ec2_dashboard"}):
-            EC2Dashboard = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
+            dashboardWeb = EC2("Dashboard-Web", id="ec2-Dashboard-Web")
+            EC2Dashboard = [dashboardWeb,
                             EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
                             EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
 
-        with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
+        with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2_other"}):
             EC2Services = [EC2("Member", id="ec2-Member"),
                            EC2("SCUM", id="ec2-SCUM"),
                            EC2("Billing", id="ec2-Billing"),
@@ -90,14 +99,14 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    EC2Dashboard, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
+    dns >> cdn >> waf >> Edge(id="cluster_edge_dns") >> [
+        dashboardENLB, authFacadeALB, apertureNLB]
+    [dashboardENLB, dashboardINLB] >> dashboardELB >> dashboardWeb
+    dashboardWeb, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
         reverse=True, id="edge_skyline") >> skylineBridge >> Edge(reverse=True, id="edge_skyline") >> k8sIngress
-    dns >> Edge(id="cluster_edge_dns") >> apertureNLB >> Edge(
-        reverse=True, id="cluster_edge_dns") >> traefik >> k8sIngress
-    traefik >> Edge(
-        reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
-    dns >> Edge(reverse=True, id="cluster_edge_dns") >> authFacadeALB >> Edge(
-        reverse=True, id="cluster_edge_dns") >> authFacade >> Edge(reverse=True, id="cluster_edge_dns") >> k8sIngress
+    apertureNLB >> Edge(reverse=True, id="cluster_edge_dns") >> traefik >> k8sIngress
+    traefik >> Edge(reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
+    authFacadeALB >> Edge(reverse=True, id="cluster_edge_dns") >> authFacade >> Edge(reverse=True, id="cluster_edge_dns") >> k8sIngress
     servicePod >> Edge(reverse=True) << kafka
     k8sIngress >> traefikPods >> Edge(reverse=True) << servicePods
-    servicePod >> Edge(reverse=True, id="edge_datastore") << datastore
+    servicePod >> Edge(reverse=True, id="edge_datastore") << mongodb
