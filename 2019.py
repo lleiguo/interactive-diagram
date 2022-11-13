@@ -24,11 +24,13 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
         with Cluster("Auth Facade", graph_attr={"id": "cluster_edge_auth_facade"}):
             authFacade = AutoScaling("Auth Facade", id="cluster_edge_aperture")
-            authFacadeALB = ALB("Auth Facade ALB", id="cluster_edge_apertureALB")
+            authFacadeALB = ALB("Auth Facade ALB",
+                                id="cluster_edge_apertureALB")
 
         with Cluster("Aperture", graph_attr={"id": "cluster_edge_aperture"}):
             apertureNLB = NLB("Aperture NLB", id="cluster_edge_apertureNLB")
-            traefik = AutoScaling("Aperture Traefik",  id="cluster_edge_traefik")
+            traefik = AutoScaling("Aperture Traefik",
+                                  id="cluster_edge_traefik")
 
     with Cluster("Kubernetes Cluster", graph_attr={"id": "cluster_k8s"}):
         with Cluster("Ingress Nodes", graph_attr={"id": "cluster_k8s_ingress"}):
@@ -57,8 +59,8 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
     with Cluster("EC2 Dashboard", direction="LR", graph_attr={"id": "cluster_ec2_dashboard"}):
         EC2Dashboard = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
-                       EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
-                       EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
+                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
+                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
 
     with Cluster("Skyline", direction="LR", graph_attr={"id": "cluster_skyline"}):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
@@ -88,13 +90,17 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 # Path:
     EC2Dashboard, EC2Services >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True, id="edge_skyline") >>  skylineBridge >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True, id="edge_skyline") >> k8sIngress
-    dns >> apertureNLB >> traefik >> k8sIngress
+                                      forward=True, reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(color="black", style="dashed",
+                                                                                                              forward=True, reverse=True, id="edge_skyline") >> skylineBridge >> Edge(color="black", style="dashed",
+                                                                                                                                                                                      forward=True, reverse=True, id="edge_skyline") >> k8sIngress
+    dns >> Edge(color="black", style="dashed",
+                forward=True, reverse=True, id="cluster_edge_dns") >> apertureNLB >> traefik >> k8sIngress
     traefik >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
-    dns >> authFacadeALB >> authFacade >> k8sIngress
+                    node=servicePod, forward=True, reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
+    dns >> Edge(color="black", style="dashed",
+                forward=True, reverse=True, id="cluster_edge_dns") >> authFacadeALB >> Edge(color="black", style="dashed",
+                forward=True, reverse=True, id="cluster_edge_dns")>> authFacade >> Edge(color="black", style="dashed",
+                forward=True, reverse=True, id="cluster_edge_dns")>> k8sIngress
     servicePod >> Edge(color="black", style="dashed",
                        node=vpcLocal, forward=True, reverse=True) << kafka
     k8sIngress >> traefikPods >> Edge(
