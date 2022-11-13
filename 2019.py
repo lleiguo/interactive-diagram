@@ -89,7 +89,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                        node=servicePod, forward=True, reverse=True, id="edge_ec2_skyline") >> skylineLB >> skylineBridge >> k8sIngress
     dns >> apertureNLB >> traefik >> k8sIngress, EC2Services
     traefik >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True, id="edge_traefik_ec2") >> EC2Services
+                       node=servicePod, forward=True, reverse=True, id="edge_ec2_traefik") >> EC2Services
     dns >> authFacadeALB >> authFacade >> k8sIngress
     servicePod >> Edge(color="black", style="dashed",
                        node=vpcLocal, forward=True, reverse=True) << kafka
