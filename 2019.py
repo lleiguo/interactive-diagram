@@ -41,26 +41,27 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
             servicePods = [Pod("Service POD", id="service_pod"), Pod(
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
-    with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
-        EC2Services = [EC2("Member", id="ec2-Member"),
-                       EC2("SCUM", id="ec2-SCUM"),
-                       EC2("Billing", id="ec2-Billing"),
-                       EC2("Message Achieve", id="ec2-Message Achieve"),
-                       EC2("Message Review", id="ec2-Message Review"),
-                       EC2("Scheduled Data", id="ec2-Scheduled Data"),
-                       EC2("Core", id="ec2-Core"),
-                       EC2("TOPS", id="ec2-TOPS"),
-                       EC2("GSS", id="ec2-GSS"),
-                       EC2("HootSupport", id="ec2-HootSupport"),
-                       EC2("Push Notifications", id="ec2-Push Notifications"),
-                       EC2("Crypto", id="ec2-Crypto"),
-                       EC2("Aperture Authz", id="ec2-Aperture Authz"),
-                       EC2("Amplify", id="ec2-Amplify")]
+    with Cluster("EC2 Services", direction="LR"):
+        with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_ec2_dashboard"}):
+            EC2Dashboard = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
+                            EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
+                            EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
 
-    with Cluster("EC2 Dashboard", direction="LR", graph_attr={"id": "cluster_ec2_dashboard"}):
-        EC2Dashboard = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
-                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
-                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
+        with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
+            EC2Services = [EC2("Member", id="ec2-Member"),
+                           EC2("SCUM", id="ec2-SCUM"),
+                           EC2("Billing", id="ec2-Billing"),
+                           EC2("Message Achieve", id="ec2-Message Achieve"),
+                           EC2("Message Review", id="ec2-Message Review"),
+                           EC2("Scheduled Data", id="ec2-Scheduled Data"),
+                           EC2("Core", id="ec2-Core"),
+                           EC2("TOPS", id="ec2-TOPS"),
+                           EC2("GSS", id="ec2-GSS"),
+                           EC2("HootSupport", id="ec2-HootSupport"),
+                           EC2("Push Notifications", id="ec2-Push Notifications"),
+                           EC2("Crypto", id="ec2-Crypto"),
+                           EC2("Aperture Authz", id="ec2-Aperture Authz"),
+                           EC2("Amplify", id="ec2-Amplify")]
 
     with Cluster("Skyline", direction="LR", graph_attr={"id": "cluster_skyline"}):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
@@ -89,7 +90,8 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    EC2Dashboard, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(reverse=True, id="edge_skyline") >> skylineBridge >> Edge(reverse=True, id="edge_skyline") >> k8sIngress
+    EC2Dashboard, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
+        reverse=True, id="edge_skyline") >> skylineBridge >> Edge(reverse=True, id="edge_skyline") >> k8sIngress
     dns >> Edge(id="cluster_edge_dns") >> apertureNLB >> Edge(
         reverse=True, id="cluster_edge_dns") >> traefik >> k8sIngress
     traefik >> Edge(
