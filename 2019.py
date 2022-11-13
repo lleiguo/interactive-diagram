@@ -45,17 +45,11 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
             k8sIngress = NLB("Ingress LB")
             traefikPods = Pod("Traefik Pods", id="traefikPods")
         with Cluster(label="Managed Worker Nodes Auto Scaling Group", graph_attr={"id": "cluster_k8s_worker"}):
-            servicePod = Pod("Service Pods... ", id="servicePods")
             servicePods = [Pod("Service POD", id="service_pod"), Pod(
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
+            servicePod = Pod("Service Pods... ", id="servicePods")
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
-        with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_dashboard_ec2"}):
-            dashboardWeb = EC2("Dashboard-Web", id="dashboard_ec2_Web")
-            EC2Dashboard = [dashboardWeb,
-                            EC2("Dashboard-Gear", id="dashboard_ec2_Gear"),
-                            EC2("Dashboard-Cron", id="dashboard_ec2_Cron")]
-
         with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2_other"}):
             EC2Services = [EC2("Member", id="ec2-Member"),
                            EC2("SCUM", id="ec2-SCUM"),
@@ -71,6 +65,11 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                            EC2("Crypto", id="ec2-Crypto"),
                            EC2("Aperture Authz", id="ec2-Aperture Authz"),
                            EC2("Amplify", id="ec2-Amplify")]
+        with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_dashboard_ec2"}):
+            dashboardWeb = EC2("Dashboard-Web", id="dashboard_ec2_Web")
+            EC2Dashboard = [dashboardWeb,
+                            EC2("Dashboard-Gear", id="dashboard_ec2_Gear"),
+                            EC2("Dashboard-Cron", id="dashboard_ec2_Cron")]
 
     with Cluster("Skyline", direction="LR", graph_attr={"id": "cluster_skyline"}):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
