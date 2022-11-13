@@ -94,7 +94,8 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                                                                                                               forward=True, reverse=True, id="edge_skyline") >> skylineBridge >> Edge(color="black", style="dashed",
                                                                                                                                                                                       forward=True, reverse=True, id="edge_skyline") >> k8sIngress
     dns >> Edge(color="black", style="dashed",
-                forward=True, reverse=True, id="cluster_edge_dns") >> apertureNLB >> traefik >> k8sIngress
+                forward=True, reverse=True, id="cluster_edge_dns") >> apertureNLB >> Edge(color="black", style="dashed",
+                forward=True, reverse=True, id="cluster_edge_dns") >>traefik >> k8sIngress
     traefik >> Edge(color="black", style="dashed",
                     node=servicePod, forward=True, reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
     dns >> Edge(color="black", style="dashed",
