@@ -110,7 +110,6 @@ d3.xml(svgURL).then((data) => {
     remove(d3.selectAll("[id=service_pod]").nodes());
     remove(d3.selectAll("[id=servicePods]").nodes());
     remove(d3.selectAll("[id*=edge_ec2_]").nodes());
-    
   });
 
   // Skyline deprecation animation
