@@ -18,7 +18,7 @@ graph_attr = {
 
 with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
-    with Cluster(label="Edge", direction="TB", graph_attr={"id": "cluster_edge"}):
+    with Cluster(label="Edge", direction="LR", graph_attr={"id": "cluster_edge"}):
         dns = Route53("dns", id="cluster_edge_dns")
         cdn = CloudFront("cdn", id="cluster_edge_cdn")
         waf = WAF("waf", id="cluster_edge_waf")
@@ -50,11 +50,11 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
-        with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_ec2_dashboard"}):
-            dashboardWeb = EC2("Dashboard-Web", id="ec2-Dashboard-Web")
+        with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_dashboard_ec2"}):
+            dashboardWeb = EC2("Dashboard-Web", id="dashboard-Web")
             EC2Dashboard = [dashboardWeb,
-                            EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
-                            EC2("Dashboard-Cron", id="ec2-Dashboard-Cron")]
+                            EC2("Dashboard-Gear", id="dashboard-Gear"),
+                            EC2("Dashboard-Cron", id="dashboard-Cron")]
 
         with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2_other"}):
             EC2Services = [EC2("Member", id="ec2-Member"),
@@ -99,7 +99,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    dns >> cdn >> waf >> Edge(id="cluster_edge_dns") >> [
+    dns >> Edge(id="cluster_edge") >> cdn >> Edge(id="cluster_edge") >> waf >> Edge(id="cluster_edge") >> [
         dashboardENLB, authFacadeALB, apertureNLB]
     [dashboardENLB, dashboardINLB] >> dashboardELB >> dashboardWeb
     dashboardWeb, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
