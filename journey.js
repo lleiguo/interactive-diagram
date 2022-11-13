@@ -43,7 +43,7 @@ d3.xml(svgURL).then((data) => {
       .on("end", () => {
         d3.select(node).select(tag).attr(attr, value);
         parent.node().appendChild(node);
-        d3.select("[id=cluster_ec2]").remove();
+        d3.select("[id=cluster_ec2_other]").remove();
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
@@ -86,7 +86,7 @@ d3.xml(svgURL).then((data) => {
   };
 
   // EC2 migration animation
-  d3.select("[id=cluster_ec2]").on("click", function () {
+  d3.select("[id=cluster_ec2_other]").on("click", function () {
     const workerCluster = d3.select("[id=cluster_k8s_worker]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
