@@ -58,7 +58,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                        EC2("Aperture Authz", id="ec2-Aperture Authz"),
                        EC2("Amplify", id="ec2-Amplify")]
 
-    with Cluster("Skyline", graph_attr={"id": "cluster_skyline"}):
+    with Cluster("Skyline", direction="LR", graph_attr={"id": "cluster_skyline"}):
         skylineLB = ALB("Skyline ALB", id="skylineLB")
         skylineBridge = EC2("Skyline Bridge", id="skylineBridge")
 
