@@ -43,6 +43,7 @@ d3.xml(svgURL).then((data) => {
       .on("end", () => {
         d3.select(node).select(tag).attr(attr, value);
         parent.node().appendChild(node);
+        d3.select("[id=cluster_ec2]").remove();
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
