@@ -128,6 +128,7 @@ d3.xml(svgURL).then((data) => {
     expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
     expand(workerCluster.select("path"), ec2.length);
     remove(d3.selectAll("[id*=edge_ec2_]").nodes());
+    d3.select("[id=cluster_ec2]").remove();
   });
 
   // Skyline deprecation animation
@@ -143,7 +144,7 @@ d3.xml(svgURL).then((data) => {
         .attrTween("transform", function () {
           const nodeBox = getElementBBox(node);
           const x = 0;
-          const y = 500;
+          const y = 400;
           return d3.interpolateString(
             `translate(0, 0)`,
             `translate(${x}, ${y})`
@@ -151,15 +152,14 @@ d3.xml(svgURL).then((data) => {
         });
     });
 
-    const dashboardNodes = d3.selectAll("[id*=cluster_dashboard]").nodes();
-    nodes.forEach((node) => {
+    d3.selectAll("[id*=dashboard_ec2]").nodes().forEach((node) => {
       d3.select(node)
         .transition()
         .duration(5000)
         .attrTween("transform", function () {
           const nodeBox = getElementBBox(node);
           const x = 0;
-          const y = 500;
+          const y = 400;
           return d3.interpolateString(
             `translate(0, 0)`,
             `translate(${x}, ${y})`

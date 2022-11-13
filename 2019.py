@@ -51,10 +51,10 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
         with Cluster("Dashboard", direction="LR", graph_attr={"id": "cluster_dashboard_ec2"}):
-            dashboardWeb = EC2("Dashboard-Web", id="dashboard-Web")
+            dashboardWeb = EC2("Dashboard-Web", id="dashboard_ec2_Web")
             EC2Dashboard = [dashboardWeb,
-                            EC2("Dashboard-Gear", id="dashboard-Gear"),
-                            EC2("Dashboard-Cron", id="dashboard-Cron")]
+                            EC2("Dashboard-Gear", id="dashboard_ec2_Gear"),
+                            EC2("Dashboard-Cron", id="dashboard_ec2_Cron")]
 
         with Cluster("Other Services", direction="LR", graph_attr={"id": "cluster_ec2_other"}):
             EC2Services = [EC2("Member", id="ec2-Member"),
