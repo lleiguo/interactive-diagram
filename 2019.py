@@ -40,7 +40,6 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                 "Service POD", id="service_pod"), Pod("Service POD", id="service_pod"), Pod("Service POD", id="service_pod")]
 
     with Cluster("EC2 Services", direction="LR", graph_attr={"id": "cluster_ec2"}):
-        apertureAuthzEC2 = EC2("Aperture Authz", id="ec2-Aperture Authz")
         EC2Services = [EC2(label="Dashboard-Web", id="ec2-Dashboard-Web"),
                        EC2("Dashboard-Gear", id="ec2-Dashboard-Gear"),
                        EC2("Dashboard-Cron", id="ec2-Dashboard-Cron"),
@@ -56,7 +55,7 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
                        EC2("HootSupport", id="ec2-HootSupport"),
                        EC2("Push Notifications", id="ec2-Push Notifications"),
                        EC2("Crypto", id="ec2-Crypto"),
-                       apertureAuthzEC2,
+                       EC2("Aperture Authz", id="ec2-Aperture Authz"),
                        EC2("Amplify", id="ec2-Amplify")]
 
     with Cluster("Skyline", graph_attr={"id": "cluster_skyline"}):
@@ -86,14 +85,15 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    apertureAuthzEC2 >> skylineLB >> skylineBridge >> k8sIngress
-    dns >> apertureNLB >> traefik >> k8sIngress
-    dns >> authFacadeALB >> authFacade >> k8sIngress, apertureAuthzEC2
+    EC2Services >> Edge(color="black", style="dashed",
+                       node=servicePod, forward=True, reverse=True, id="edge_ec2_skyline") >> skylineLB >> skylineBridge >> k8sIngress
+    dns >> apertureNLB >> traefik >> k8sIngress, EC2Services
+    dns >> authFacadeALB >> authFacade >> k8sIngress
     servicePod >> Edge(color="black", style="dashed",
                        node=vpcLocal, forward=True, reverse=True) << kafka
     k8sIngress >> traefikPods >> Edge(
         color="black", style="dashed", node=servicePod, forward=True, reverse=True) << servicePods
     servicePod >> Edge(color="black", style="dashed",
-                       node=servicePod, forward=True, reverse=True) << datastore
+                       node=servicePod, forward=True, reverse=True, id="edge_datastore") << datastore
     traefik >> Edge(color="black", style="dashed", node=traefik,
-                    forward=True, reverse=True) << apertureAuthzEC2
+                    forward=True, reverse=True) << EC2Services
