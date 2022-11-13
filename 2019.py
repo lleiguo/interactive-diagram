@@ -97,5 +97,3 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
         color="black", style="dashed", node=servicePod, forward=True, reverse=True) << servicePods
     servicePod >> Edge(color="black", style="dashed",
                        node=servicePod, forward=True, reverse=True, id="edge_datastore") << datastore
-    traefik >> Edge(color="black", style="dashed", node=traefik,
-                    forward=True, reverse=True) << EC2Services
