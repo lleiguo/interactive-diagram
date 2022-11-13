@@ -20,15 +20,15 @@ graph_attr = {
 with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
     with Cluster(label="Edge", direction="TB", graph_attr={"id": "cluster_edge"}):
-        dns = Route53("dns")
+        dns = Route53("dns", id="cluster_edge_dns")
 
-        with Cluster("Auth Facade", graph_attr={"id": "cluster_auth_facade"}):
-            authFacade = AutoScaling("Auth Facade")
-            authFacadeALB = ALB("Auth Facade ALB")
+        with Cluster("Auth Facade", graph_attr={"id": "cluster_edge_auth_facade"}):
+            authFacade = AutoScaling("Auth Facade", id="cluster_edge_aperture")
+            authFacadeALB = ALB("Auth Facade ALB", id="cluster_edge_apertureALB")
 
-        with Cluster("Aperture", graph_attr={"id": "cluster_aperture"}):
-            apertureNLB = NLB("Aperture NLB", id="apertureNLB")
-            traefik = AutoScaling("Aperture Traefik",  id="traefik")
+        with Cluster("Aperture", graph_attr={"id": "cluster_edge_aperture"}):
+            apertureNLB = NLB("Aperture NLB", id="cluster_edge_apertureNLB")
+            traefik = AutoScaling("Aperture Traefik",  id="cluster_edge_traefik")
 
     with Cluster("Kubernetes Cluster", graph_attr={"id": "cluster_k8s"}):
         with Cluster("Ingress Nodes", graph_attr={"id": "cluster_k8s_ingress"}):

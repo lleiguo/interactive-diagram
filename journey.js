@@ -116,6 +116,20 @@ d3.xml(svgURL).then((data) => {
   d3.select("[id=cluster_skyline]").on("click", function () {
     const skylineCluster = svg.selectAll("[id*=skyline]").nodes();
     remove(skylineCluster);
+    // move(d3.select("[id=cluster_edge]"), 0, -100);
+    const nodes = d3.select("[id*=cluster_edge]").selectAll("g").nodes();
+    console.log(nodes);
+    nodes.forEach((node) => {
+      d3.select(node)
+      .transition()
+      .duration(5000)
+      .attrTween("transform", function () {
+        const nodeBox = getElementBBox(node);
+        const x = 125;
+        const y = moveTo.y - nodeBox.y;
+        return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
+      })
+    });
   });
 
   // Consolidate Aperture
