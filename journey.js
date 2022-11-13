@@ -29,25 +29,45 @@ d3.xml(svgURL).then((data) => {
   const svg = d3.select("svg");
 
   //transform a set of nodes to new location with new style
-  const transformPosAndStyle = (nodes, index, moveTo, parent, tag, attr, value) => {
+  const transformPosAndStyle = (
+    nodes,
+    index,
+    moveTo,
+    currentParent,
+    newParent,
+    tag,
+    attr,
+    value
+  ) => {
     const node = nodes[index];
+    const currentParentBox = getElementBBox(currentParent.node());
+    const newParentBox = getElementBBox(newParent.node());
     d3.select(node)
       .transition()
       .duration(5000)
       .attrTween("transform", function () {
         const nodeBox = getElementBBox(node);
-        const x = 125;
+        const x = currentParentBox.x - moveTo.x;
         const y = moveTo.y - nodeBox.y;
         return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
       })
       .on("end", () => {
         d3.select(node).select(tag).attr(attr, value);
-        parent.node().appendChild(node);
-        d3.select("[id=cluster_ec2_other]").remove();
+        newParent.node().appendChild(node);
+        currentParent.remove();
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
-          transformPosAndStyle(nodes, index + 1, moveTo, parent, tag, attr, value);
+          transformPosAndStyle(
+            nodes,
+            index + 1,
+            moveTo,
+            currentParent,
+            newParent,
+            tag,
+            attr,
+            value
+          );
         }
       });
   };
@@ -63,8 +83,8 @@ d3.xml(svgURL).then((data) => {
       elementBox.x + elementBox.w * (times - 1),
       elementBox.y + elementBox.h
     );
-    path.lineTo(elementBox.x - elementBox.w * 1.2 , elementBox.y + elementBox.h);
-    path.lineTo(elementBox.x - elementBox.w * 1.2 , elementBox.y);
+    path.lineTo(elementBox.x - elementBox.w * 1.2, elementBox.y + elementBox.h);
+    path.lineTo(elementBox.x - elementBox.w * 1.2, elementBox.y);
     path.closePath();
 
     element.attr("d", path);
@@ -76,8 +96,8 @@ d3.xml(svgURL).then((data) => {
       d3.select(node)
         .style("opacity", 1)
         .transition()
-        .duration(2000)
-        .delay(1000)
+        .duration(4000)
+        .delay(2000)
         .style("opacity", 0)
         .on("end", function () {
           d3.select(node).remove();
@@ -90,7 +110,7 @@ d3.xml(svgURL).then((data) => {
     const workerCluster = d3.select("[id=cluster_k8s_worker]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    const servicePodsBox = getElementBBox(workerCluster.node());
+    const servicePodsBox = getElementBBox(d3.select("[id=servicePods]").node());
     const newImageLink =
       "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
 
@@ -98,6 +118,7 @@ d3.xml(svgURL).then((data) => {
       ec2,
       0,
       servicePodsBox,
+      d3.select("[id=cluster_ec2_other]"),
       workerCluster,
       "image",
       "xlink:href",
@@ -106,7 +127,6 @@ d3.xml(svgURL).then((data) => {
 
     expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
     expand(workerCluster.select("path"), ec2.length);
-    remove(d3.selectAll("[id=service_pod]").nodes());
     remove(d3.selectAll("[id*=edge_ec2_]").nodes());
   });
 
@@ -116,18 +136,37 @@ d3.xml(svgURL).then((data) => {
     remove(skylineCluster);
     // move(d3.select("[id=cluster_edge]"), 0, -100);
     const nodes = d3.selectAll("[id*=cluster_edge]").nodes();
-    console.log(nodes);
     nodes.forEach((node) => {
       d3.select(node)
-      .transition()
-      .duration(5000)
-      .attrTween("transform", function () {
-        const nodeBox = getElementBBox(node);
-        const x = 0
-        const y = 500;
-        return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
-      })
+        .transition()
+        .duration(5000)
+        .attrTween("transform", function () {
+          const nodeBox = getElementBBox(node);
+          const x = 0;
+          const y = 500;
+          return d3.interpolateString(
+            `translate(0, 0)`,
+            `translate(${x}, ${y})`
+          );
+        });
     });
+
+    const dashboardNodes = d3.selectAll("[id*=cluster_dashboard]").nodes();
+    nodes.forEach((node) => {
+      d3.select(node)
+        .transition()
+        .duration(5000)
+        .attrTween("transform", function () {
+          const nodeBox = getElementBBox(node);
+          const x = 0;
+          const y = 500;
+          return d3.interpolateString(
+            `translate(0, 0)`,
+            `translate(${x}, ${y})`
+          );
+        });
+    });
+
   });
 
   // Consolidate Aperture

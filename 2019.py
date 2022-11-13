@@ -101,12 +101,12 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 # Path:
     dns >> Edge(id="cluster_edge") >> cdn >> Edge(id="cluster_edge") >> waf >> Edge(id="cluster_edge") >> [
         dashboardENLB, authFacadeALB, apertureNLB]
-    [dashboardENLB, dashboardINLB] >> Edge(id="cluster_edge") >> dashboardELB >> Edge(id="cluster_edge") >> dashboardWeb
+    [dashboardENLB, dashboardINLB] >> Edge(id="cluster_edge") >> dashboardELB >> dashboardWeb
     dashboardWeb, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
         reverse=True, id="edge_skyline") >> skylineBridge >> Edge(reverse=True, id="edge_skyline") >> k8sIngress
     apertureNLB >> Edge(reverse=True, id="cluster_edge") >> traefik >> k8sIngress
     traefik >> Edge(reverse=True, id="edge_ec2_traefik") >> EC2Services, EC2Dashboard
-    authFacadeALB >> Edge(reverse=True, id="cluster_edge") >> authFacade >> Edge(reverse=True, id="cluster_edge") >> k8sIngress
+    authFacadeALB >> Edge(reverse=True, id="cluster_edge") >> authFacade >> k8sIngress
     servicePod >> Edge(reverse=True) << kafka
     k8sIngress >> traefikPods >> Edge(reverse=True) << servicePods
     servicePod >> Edge(reverse=True, id="edge_datastore") << mongodb
