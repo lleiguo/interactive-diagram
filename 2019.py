@@ -99,9 +99,9 @@ with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr,
 
 
 # Path:
-    dns >> Edge(id="cluster_edge") >> cdn >> Edge(id="cluster_edge") >> waf >> Edge(id="cluster_edge") >> [
-        dashboardENLB, authFacadeALB, apertureNLB]
-    [dashboardENLB, dashboardINLB] >> Edge(id="cluster_edge") >> dashboardELB >> Edge(id="dashboard_ec2") >> dashboardWeb
+    dns >> Edge(id="cluster_edge") >> cdn >> Edge(id="cluster_edge") >> waf >> Edge(id="cluster_edge") >> [authFacadeALB, apertureNLB]
+    waf >> Edge(id="cluster_edge_dashboard") >> dashboardENLB
+    [dashboardENLB, dashboardINLB] >> Edge(id="cluster_edge_dashboard") >> dashboardELB >> Edge(id="dashboard_ec2") >> dashboardWeb
     dashboardWeb, EC2Services >> Edge(reverse=True, id="edge_ec2_skyline") >> skylineLB >> Edge(
         reverse=True, id="edge_skyline") >> skylineBridge >> Edge(reverse=True, id="edge_skyline") >> k8sIngress
     apertureNLB >> Edge(reverse=True, id="cluster_edge") >> traefik >> k8sIngress

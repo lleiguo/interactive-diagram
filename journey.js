@@ -159,4 +159,27 @@ d3.xml(svgURL).then((data) => {
     const apertureCluster = svg.selectAll("[id*=aperture]").nodes();
     remove(apertureCluster);
   });
+
+  d3.select("[id=cluster_dashboard_ec2]").on("click", function () {
+    const workerCluster = d3.select("[id=cluster_k8s_worker]");
+    const ec2 = svg.selectAll("[id^=dashboard_ec2]").nodes();
+
+    const servicePodsBox = getElementBBox(d3.select("[id=servicePods]").node());
+    const newImageLink =
+      "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
+
+    transformPosAndStyle(
+      ec2,
+      0,
+      servicePodsBox,
+      d3.select("[id=cluster_dashboard_ec2]"),
+      workerCluster,
+      "image",
+      "xlink:href",
+      newImageLink
+    );
+
+    remove(d3.selectAll("[id*=cluster_edge_dashboard]").nodes());
+  });
+
 });
