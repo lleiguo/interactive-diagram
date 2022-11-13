@@ -135,39 +135,24 @@ d3.xml(svgURL).then((data) => {
   d3.select("[id=cluster_skyline]").on("click", function () {
     const skylineCluster = svg.selectAll("[id*=skyline]").nodes();
     remove(skylineCluster);
-    // move(d3.select("[id=cluster_edge]"), 0, -100);
-    const nodes = d3.selectAll("[id*=cluster_edge]").nodes();
-    nodes.forEach((node) => {
-      d3.select(node)
-        .transition()
-        .duration(5000)
-        .attrTween("transform", function () {
-          const nodeBox = getElementBBox(node);
-          const x = 0;
-          const y = 400;
-          return d3.interpolateString(
-            `translate(0, 0)`,
-            `translate(${x}, ${y})`
-          );
-        });
-    });
-
-    d3.selectAll("[id*=dashboard_ec2]").nodes().forEach((node) => {
-      d3.select(node)
-        .transition()
-        .duration(5000)
-        .attrTween("transform", function () {
-          const nodeBox = getElementBBox(node);
-          const x = 0;
-          const y = 400;
-          return d3.interpolateString(
-            `translate(0, 0)`,
-            `translate(${x}, ${y})`
-          );
-        });
-    });
-
+    move(d3.selectAll("[id*=cluster_edge]").nodes(), 0, 400);
+    move(d3.selectAll("[id*=dashboard_ec2]").nodes(), 0, 300);
   });
+
+  const move = (element, x, y) => {
+    element.forEach((node) => {
+      d3.select(node)
+        .transition()
+        .duration(5000)
+        .attrTween("transform", function () {
+          const nodeBox = getElementBBox(node);
+          return d3.interpolateString(
+            `translate(0, 0)`,
+            `translate(${x}, ${y})`
+          );
+        });
+    });
+  }
 
   // Consolidate Aperture
   d3.select("[id=cluster_aperture]").on("click", function () {
