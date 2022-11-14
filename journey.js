@@ -32,38 +32,33 @@ d3.xml(svgURL).then((data) => {
   const transformPosAndStyle = (
     nodes,
     index,
-    moveTo,
-    currentParent,
-    newParent,
+    moveToX,
+    moveToY,
     tag,
     attr,
     value
   ) => {
     const node = nodes[index];
-    const currentParentBox = getElementBBox(currentParent.node());
-    const newParentBox = getElementBBox(newParent.node());
     d3.select(node)
       .transition()
       .duration(5000)
       .attrTween("transform", function () {
         const nodeBox = getElementBBox(node);
-        const x = currentParentBox.x - moveTo.x;
-        const y = moveTo.y - nodeBox.y;
-        return d3.interpolateString(`translate(0, 0)`, `translate(${x}, ${y})`);
+        return d3.interpolateString(
+          `translate(0, 0)`,
+          `translate(${moveToX}, ${moveToY - nodeBox.y})`
+        );
       })
       .on("end", () => {
         d3.select(node).select(tag).attr(attr, value);
-        newParent.node().appendChild(node);
-        currentParent.remove();
       })
       .on("start", function () {
         if (index < nodes.length - 1) {
           transformPosAndStyle(
             nodes,
             index + 1,
-            moveTo,
-            currentParent,
-            newParent,
+            moveToX,
+            moveToY,
             tag,
             attr,
             value
@@ -110,16 +105,20 @@ d3.xml(svgURL).then((data) => {
     const workerCluster = d3.select("[id=cluster_k8s_worker]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
-    const servicePodsBox = getElementBBox(d3.select("[id=servicePods]").node());
+    const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
     const newImageLink =
       "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
+
+    const currentParentBox = getElementBBox(d3.select("[id=cluster_ec2_other]").node());
+    const newParentBox = getElementBBox(workerCluster.node());
+    const x = moveTo.x - currentParentBox.x - newParentBox.x;
+    const y = moveTo.y;
 
     transformPosAndStyle(
       ec2,
       0,
-      servicePodsBox,
-      d3.select("[id=cluster_ec2_other]"),
-      workerCluster,
+      x + 150,
+      y,
       "image",
       "xlink:href",
       newImageLink
@@ -128,7 +127,11 @@ d3.xml(svgURL).then((data) => {
     expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
     expand(workerCluster.select("path"), ec2.length);
     remove(d3.selectAll("[id*=edge_ec2_]").nodes());
+    remove(d3.selectAll("[id=service_pod]").nodes());
+    d3.select("[id=servicePods]").remove();
+    
     d3.select("[id=cluster_ec2]").remove();
+    d3.select("[id=cluster_ec2_other]").remove();
   });
 
   // Skyline deprecation animation
@@ -152,7 +155,7 @@ d3.xml(svgURL).then((data) => {
           );
         });
     });
-  }
+  };
 
   // Consolidate Aperture
   d3.select("[id=cluster_aperture]").on("click", function () {
@@ -181,5 +184,4 @@ d3.xml(svgURL).then((data) => {
 
     remove(d3.selectAll("[id*=cluster_edge_dashboard]").nodes());
   });
-
 });
