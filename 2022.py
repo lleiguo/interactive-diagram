@@ -16,7 +16,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram("Hootsuite 2022", show=True, direction="TB", graph_attr=graph_attr, outformat=["png", "svg"]):
+with Diagram("Hootsuite 2022", direction="TB", graph_attr=graph_attr, outformat=["png", "svg"]):
 
     # Major components
     with Cluster("Edge"):
