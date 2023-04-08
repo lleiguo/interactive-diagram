@@ -100,7 +100,7 @@ d3.xml(svgURL).then((data) => {
     });
   };
 
-  // EC2 migration animation
+  // Owly migration animation
   d3.select("[id=cluster_owly]").on("click", function () {
     const workerCluster = d3.select("[id=cluster_k8s]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
@@ -127,12 +127,8 @@ d3.xml(svgURL).then((data) => {
     );
 
     expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
-    expand(workerCluster.select("path"), ec2.length);
-    remove(d3.selectAll("[id*=edge_ec2_]").nodes());
-    remove(d3.selectAll("[id=service_pod]").nodes());
-    d3.select("[id=servicePods]").remove();
-    d3.select("[id=cluster_ec2]").remove();
-    d3.select("[id=cluster_ec2_other]").remove();
+    d3.selectAll("[id^=owly]").remove();
+    d3.select("[id=cluster_owly]").remove();
   });
 
   // Skyline deprecation animation
