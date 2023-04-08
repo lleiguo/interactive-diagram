@@ -126,7 +126,7 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
-    expand(d3.select("[id=cluster_k8s]").select("path"), ec2.length);
+    expand(d3.select("[id=cluster_k8s]").select("path"), owly.length);
     d3.selectAll("[id^=owly]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
