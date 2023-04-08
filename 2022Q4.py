@@ -17,7 +17,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_attr, outformat=["png"]):
+with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
 
     with Cluster(label="Production/Staging", direction="TB", graph_attr={"id": "cluster_production"}):
 
