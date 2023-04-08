@@ -17,7 +17,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
+with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_attr, outformat=["png"]):
 
     with Cluster(label="Production/Staging", direction="TB", graph_attr={"id": "cluster_production"}):
 
@@ -31,6 +31,7 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
                             EC2("Webhook Egress Proxy", id="ec2-WebhookEgressProxy"),
                             EC2("External API", id="ec2-ExternalAPI"),
                             EC2("Data Deletion", id="ec2-DataDeletion")]
+                EC2Other = EC2("Other EC2 Services", id="ec2-other")
 
         with Cluster("Vault"):
             vault = EC2("Vault", id="ec2-vault")
@@ -62,3 +63,4 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
     vault >> Edge(reverse=True) << servicePods
     k8sIngress >> Edge(reverse=True) << servicePod, servicePods
     servicePod >> Edge(reverse=True, id="edge_datastore") << datastore
+    EC2Other >> Edge(reverse=True, id="edge_ec2other") << datastore 
