@@ -21,7 +21,7 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
 
     with Cluster(label="Production/Staging", direction="TB", graph_attr={"id": "cluster_production"}):
 
-        with Cluster("Aperture", graph_attr={"id": "cluster_edge_aperture"}):
+        with Cluster("Aperture", graph_attr={"id": "cluster_aperture"}):
             traefik = AutoScaling("Traefik Aperture",
                                 id="ec2_aperture_traefik")
             authFacade = AutoScaling("Auth Facade", id="ec2_aperture_authfacade")

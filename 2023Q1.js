@@ -101,7 +101,7 @@ d3.xml(svgURL).then((data) => {
   };
 
     // Aperture migration animation
-    d3.select("[id=Aperture]").on("click", function () {
+    d3.select("[id=cluster_aperture]").on("click", function () {
       const aperture = svg.selectAll("[id^=ec2_aperture]").nodes();
   
       const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
