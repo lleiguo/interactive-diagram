@@ -113,7 +113,7 @@ d3.xml(svgURL).then((data) => {
       d3.select("[id=cluster_owly]").node()
     );
     const newParentBox = getElementBBox(k8scluster.node());
-    const y = -10;
+    const y = -50;
 
     transformPosAndStyle(
       owly,
@@ -125,7 +125,7 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
-    expand(k8scluster.select("path"), -1);
+    expand(k8scluster.select("path"), 3);
     d3.select("[id=haproxy]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
