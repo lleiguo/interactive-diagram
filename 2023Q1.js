@@ -109,10 +109,6 @@ d3.xml(svgURL).then((data) => {
       const newImageLink =
         "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
   
-      const currentParentBox = getElementBBox(
-        d3.select("[id=cluster_owly]").node()
-      );
-      const newParentBox = getElementBBox(k8scluster.node());
       const y = moveTo.y + moveTo.h;
   
       transformPosAndStyle(
@@ -126,8 +122,7 @@ d3.xml(svgURL).then((data) => {
       );
   
       expand(k8scluster.select("path"), 3);
-      d3.select("[id=haproxy]").remove();
-      d3.select("[id=cluster_owly]").remove();
+      d3.select("[id=Aperture]").remove();
     });
 
     
