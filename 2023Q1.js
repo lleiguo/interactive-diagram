@@ -114,7 +114,7 @@ d3.xml(svgURL).then((data) => {
     );
     const newParentBox = getElementBBox(k8scluster.node());
     const x = moveTo.x;
-    const y = moveTo.y + 150;
+    const y = moveTo.y;
 
     transformPosAndStyle(
       owly,
