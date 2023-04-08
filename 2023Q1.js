@@ -127,7 +127,6 @@ d3.xml(svgURL).then((data) => {
     );
 
     expand(k8scluster.select("path"), owly.length);
-    d3.selectAll("[id^=owly]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
 
