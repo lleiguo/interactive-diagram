@@ -16,7 +16,7 @@ graph_attr = {
     "bgcolor": "transparent"
 }
 
-with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["svg"]):
+with Diagram(filename="base", show=False, direction="TB", graph_attr=graph_attr, outformat=["png"]):
 
     with Cluster(label="Edge", direction="LR", graph_attr={"id": "cluster_edge"}):
         dns = Route53("dns", id="cluster_edge_dns")
