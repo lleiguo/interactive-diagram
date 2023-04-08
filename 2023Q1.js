@@ -105,7 +105,7 @@ d3.xml(svgURL).then((data) => {
     const k8scluster = d3.select("[id=cluster_k8s]");
     const owly = svg.selectAll("[id^=owly]").nodes();
 
-    const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
+    const moveTo = getElementBBox(d3.select("[id=amplify]").node());
     const newImageLink =
       "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
 
