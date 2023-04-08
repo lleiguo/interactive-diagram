@@ -113,15 +113,15 @@ d3.xml(svgURL).then((data) => {
       transformPosAndStyle(
         aperture,
         0,
-        0,
+        150,
         y,
         "image",
         "xlink:href",
         newImageLink
       );
   
-      expand(k8scluster.select("path"), 3);
-      d3.select("[id=Aperture]").remove();
+      expand(k8scluster.select("path"), 1);
+      d3.select("[id=cluster_aperture]").remove();
     });
 
     
@@ -150,7 +150,7 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
-    expand(k8scluster.select("path"), 3);
+    expand(k8scluster.select("path"), 2);
     d3.select("[id=haproxy]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
