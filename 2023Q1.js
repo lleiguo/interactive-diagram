@@ -113,13 +113,12 @@ d3.xml(svgURL).then((data) => {
       d3.select("[id=cluster_owly]").node()
     );
     const newParentBox = getElementBBox(k8scluster.node());
-    const x = 0;
-    const y = moveTo.h;
+    const y = owly.y - moveTo.y + moveTo.h;
 
     transformPosAndStyle(
       owly,
       0,
-      x,
+      0,
       y,
       "image",
       "xlink:href",
