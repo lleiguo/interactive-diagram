@@ -102,7 +102,7 @@ d3.xml(svgURL).then((data) => {
 
   // Owly migration animation
   d3.select("[id=cluster_owly]").on("click", function () {
-    const workerCluster = d3.select("[id=cluster_k8s]");
+    const k8scluster = d3.select("[id=cluster_k8s]");
     const owly = svg.selectAll("[id^=owly]").nodes();
 
     const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
@@ -112,7 +112,7 @@ d3.xml(svgURL).then((data) => {
     const currentParentBox = getElementBBox(
       d3.select("[id=cluster_owly]").node()
     );
-    const newParentBox = getElementBBox(workerCluster.node());
+    const newParentBox = getElementBBox(k8scluster.node());
     const x = moveTo.x - currentParentBox.x - newParentBox.x;
     const y = moveTo.y;
 
@@ -126,7 +126,7 @@ d3.xml(svgURL).then((data) => {
       newImageLink
     );
 
-    expand(d3.select("[id=cluster_k8s]").select("path"), owly.length);
+    expand(k8scluster.select("path"), owly.length);
     d3.selectAll("[id^=owly]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
