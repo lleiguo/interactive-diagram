@@ -50,7 +50,7 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
             servicePod = Pod("Other Microservices Pods... ", id="servicePods")
 
     with Cluster("US-West-1 - Owly", graph_attr={"id": "cluster_owly"}):
-        haproxy = NLB("HAProxy", id="owlynlb")
+        haproxy = NLB("HAProxy", id="haproxy")
         owlyweb = EC2("Owly Web", id="owlyweb")
         owlydb = EC2("Owly Analytics", id="owly-analytics")
 

@@ -119,7 +119,7 @@ d3.xml(svgURL).then((data) => {
     transformPosAndStyle(
       owly,
       0,
-      x + 150,
+      x,
       y,
       "image",
       "xlink:href",
@@ -127,6 +127,7 @@ d3.xml(svgURL).then((data) => {
     );
 
     expand(k8scluster.select("path"), owly.length);
+    d3.select("[id=haproxy]").remove();
     d3.select("[id=cluster_owly]").remove();
   });
 
