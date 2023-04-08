@@ -102,8 +102,7 @@ d3.xml(svgURL).then((data) => {
 
     // Aperture migration animation
     d3.select("[id=Aperture]").on("click", function () {
-      const k8scluster = d3.select("[id=cluster_k8s]");
-      const owly = svg.selectAll("[id^=ec2_aperture]").nodes();
+      const aperture = svg.selectAll("[id^=ec2_aperture]").nodes();
   
       const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
       const newImageLink =
@@ -112,7 +111,7 @@ d3.xml(svgURL).then((data) => {
       const y = moveTo.y + moveTo.h;
   
       transformPosAndStyle(
-        owly,
+        aperture,
         0,
         0,
         y,
