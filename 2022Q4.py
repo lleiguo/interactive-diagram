@@ -23,8 +23,8 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
 
         with Cluster("Aperture", graph_attr={"id": "cluster_edge_aperture"}):
             traefik = AutoScaling("Traefik Aperture",
-                                id="cluster_edge_traefik")
-            authFacade = AutoScaling("Auth Facade", id="cluster_edge_aperture")
+                                id="ec2_aperture_traefik")
+            authFacade = AutoScaling("Auth Facade", id="ec2_aperture_authfacade")
 
         with Cluster("EC2 Services", graph_attr={"id": "cluster_ec2"}):
                 EC2Services = [EC2("Auth Facade", id="ec2-AuthFacade"),
@@ -44,7 +44,7 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
             cache = ElasticacheForRedis("Redis")
             datastore = [rds, cache]
 
-    with Cluster("Kubernetes Cluster", graph_attr={"id": "cluster_k8s"}):
+    with Cluster("Kubernetes Cluster", direction="TB", graph_attr={"id": "cluster_k8s"}):
             k8sIngress = NLB("Traefik Ingress")
             servicePods = [Pod("Dashboard PHP", id="dashboard"), Pod("Amplify", id="amplify")]
             servicePod = Pod("Other Microservices Pods... ", id="servicePods")
@@ -60,5 +60,5 @@ with Diagram(filename="2022Q4", show=False, direction="TB", graph_attr=graph_att
     traefik >> Edge(reverse=True, id="edge_ec2_traefik") >> EC2Services
     servicePod >> Edge(reverse=True) << kafka
     vault >> Edge(reverse=True) << servicePods
-    k8sIngress >> Edge(reverse=True) << servicePods, servicePod
+    k8sIngress >> Edge(reverse=True) << servicePod, servicePods
     servicePod >> Edge(reverse=True, id="edge_datastore") << datastore

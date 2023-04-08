@@ -100,6 +100,37 @@ d3.xml(svgURL).then((data) => {
     });
   };
 
+    // Aperture migration animation
+    d3.select("[id=Aperture]").on("click", function () {
+      const k8scluster = d3.select("[id=cluster_k8s]");
+      const owly = svg.selectAll("[id^=ec2_aperture]").nodes();
+  
+      const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
+      const newImageLink =
+        "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
+  
+      const currentParentBox = getElementBBox(
+        d3.select("[id=cluster_owly]").node()
+      );
+      const newParentBox = getElementBBox(k8scluster.node());
+      const y = moveTo.y + moveTo.h;
+  
+      transformPosAndStyle(
+        owly,
+        0,
+        0,
+        y,
+        "image",
+        "xlink:href",
+        newImageLink
+      );
+  
+      expand(k8scluster.select("path"), 3);
+      d3.select("[id=haproxy]").remove();
+      d3.select("[id=cluster_owly]").remove();
+    });
+
+    
   // Owly migration animation
   d3.select("[id=cluster_owly]").on("click", function () {
     const k8scluster = d3.select("[id=cluster_k8s]");
@@ -113,7 +144,7 @@ d3.xml(svgURL).then((data) => {
       d3.select("[id=cluster_owly]").node()
     );
     const newParentBox = getElementBBox(k8scluster.node());
-    const y = moveTo.y + moveTo.h - 15;
+    const y = moveTo.y + moveTo.h;
 
     transformPosAndStyle(
       owly,
