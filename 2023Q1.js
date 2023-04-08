@@ -103,7 +103,7 @@ d3.xml(svgURL).then((data) => {
   // Owly migration animation
   d3.select("[id=cluster_owly]").on("click", function () {
     const workerCluster = d3.select("[id=cluster_k8s]");
-    const ec2 = svg.selectAll("[id^=ec2]").nodes();
+    const owly = svg.selectAll("[id^=owly]").nodes();
 
     const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
     const newImageLink =
@@ -117,7 +117,7 @@ d3.xml(svgURL).then((data) => {
     const y = moveTo.y;
 
     transformPosAndStyle(
-      ec2,
+      owly,
       0,
       x + 150,
       y,
