@@ -101,7 +101,7 @@ d3.xml(svgURL).then((data) => {
   };
 
   // EC2 migration animation
-  d3.select("[id=ccluster_owly]").on("click", function () {
+  d3.select("[id=cluster_owly]").on("click", function () {
     const workerCluster = d3.select("[id=cluster_k8s]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
