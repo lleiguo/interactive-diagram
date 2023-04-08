@@ -110,7 +110,7 @@ d3.xml(svgURL).then((data) => {
       "https://raw.githubusercontent.com/mingrammer/diagrams/834899659ae2e4f9f0d0dd9d01a4d7f31513d726/resources/k8s/compute/pod.png";
 
     const currentParentBox = getElementBBox(
-      d3.select("[id=cluster_ec2_other]").node()
+      d3.select("[id=cluster_owly]").node()
     );
     const newParentBox = getElementBBox(workerCluster.node());
     const x = moveTo.x - currentParentBox.x - newParentBox.x;
