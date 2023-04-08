@@ -101,8 +101,8 @@ d3.xml(svgURL).then((data) => {
   };
 
   // EC2 migration animation
-  d3.select("[id=cluster_ec2_other]").on("click", function () {
-    const workerCluster = d3.select("[id=cluster_k8s_worker]");
+  d3.select("[id=ccluster_owly]").on("click", function () {
+    const workerCluster = d3.select("[id=cluster_k8s]");
     const ec2 = svg.selectAll("[id^=ec2]").nodes();
 
     const moveTo = getElementBBox(d3.select("[id=servicePods]").node());
@@ -131,7 +131,6 @@ d3.xml(svgURL).then((data) => {
     remove(d3.selectAll("[id*=edge_ec2_]").nodes());
     remove(d3.selectAll("[id=service_pod]").nodes());
     d3.select("[id=servicePods]").remove();
-
     d3.select("[id=cluster_ec2]").remove();
     d3.select("[id=cluster_ec2_other]").remove();
   });
